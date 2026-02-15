@@ -1,0 +1,314 @@
+<style>
+    /* ===== NAV LINKS & VAKJES ===== */
+    .nav-links {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        font-size: 14px;
+        line-height: 1.4;
+        z-index: 999;
+    }
+    
+    .nav-links a {
+        margin-right: 20px;
+        color: #000;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+    
+    .nav-links a:hover { color: rgb(213, 213, 213); }
+    
+    .nav-item .box { margin-right: 6px; }
+    .nav-item .box::before { content: "☐"; }
+    .nav-item.active .box::before { content: "☒"; }
+    
+/* ===== RECHTERKOLOM (gedeeld over alle pagina’s) ===== */
+.about-info {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 320px;          /* 🔑 identiek aan About & Installations */
+    font-size: 14px;
+    line-height: 1.4;
+    z-index: 999;
+    text-align: left;
+}
+
+.about-info {
+    margin: 0;             /* 🔑 geen extra inspringing */
+    font-size: 14px;
+    font-weight: normal;
+}
+
+    
+.about-link a:hover {
+    color: rgb(213, 213, 213); /* grijs bij hover */
+    cursor: pointer;
+}
+.about-name {
+    font-size: 14px;
+    font-weight: normal;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.about-name:hover {
+    color: rgb(213, 213, 213);
+    cursor: pointer;
+}
+
+    
+    /* ===== SCENT ITEMS ===== */
+    .scent-items {
+    margin: 20px auto 40px auto;  /* ← zelfde top-hoogte als about-info */
+    max-width: 660px;
+}
+
+    
+    .g-item { cursor: pointer; margin-bottom: 18px; }
+    .g-title { font-size: 14px; line-height: 1.4; }
+    .g-title::first-line { font-size: 16px; font-weight: bold;margin-left:100px }
+    .g-item:hover .g-title { color: rgba(0,0,0,0.2); }
+    /* extra tekst uitlijnen met de g */
+    .g-extra {
+    display: none;
+    margin-top: 6px;
+    margin-left: 36px;     /* ← meer naar het midden */
+    max-width: 420px;      /* iets smaller = rustiger */
+    font-size: 13px;       /* subtiel kleiner */
+    line-height: 1.45;
+}
+
+
+    
+    /* popup images */
+    .popup-image {
+        position: fixed;
+        width: 80px;
+        height: auto;
+        z-index: 9999;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    /* bolletje */
+.bullet {
+    display: inline-block;
+    width: 14px;
+    cursor: pointer;
+    margin-right: 6px;
+    user-select: none;
+}
+
+/* actief = zwart gevuld */
+.g-item.active .bullet::before {
+    content: "●";
+}
+
+.bullet::before {
+    content: "○";
+}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+
+/* NAV LINKS */
+.nav-links {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 20px;
+}
+
+.nav-links a {
+    display: block;
+    margin: 0 0 6px 0;
+}
+
+/* ABOUT NAAM */
+.about-info {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0 20px 20px 20px;
+    width: auto;
+    text-align: left;
+}
+
+/* SCENT ITEMS */
+.scent-items {
+    margin: 0 20px 40px 20px;
+    max-width: 100%;
+}
+
+.g-title::first-line {
+    margin-left: 0;      /* geen harde inspringing */
+    font-size: 15px;
+}
+
+.g-extra {
+    margin-left: 20px;
+    max-width: 100%;
+}
+}
+
+
+    </style>
+    
+    <body>
+    
+    <!-- NAV LINKS -->
+    <div class="nav-links">
+        <a href="installations.html" class="nav-item installations">
+            <span class="box"></span> Works
+        </a>
+        <a href="scents.html" class="nav-item scents active">
+            <span class="box"></span> Scents
+        </a>
+        <a href="about.html" class="nav-item about">
+            <span class="box"></span> About
+        </a>
+    </div>
+    
+    <!-- JULIE VANLOOK RECHTSBOVEN (alleen titel) -->
+    <div class="about-info">
+        <a href="about.html" class="about-name">
+            Julie Vanlook, Visual / Olfactory Artist
+        </a>
+    </div>
+    
+    <!-- SCENT ITEMS -->
+    <div class="scent-items">
+        <div class="g-item active">
+            <div class="g-title">
+                <span class="bullet" onclick="toggleText(this.parentElement.parentElement)"></span>
+                g.AV.03<br>
+            </div>
+        
+            <div class="g-extra" style="display:block;">
+                musk, peppermint, tabaco, leather
+                <br>-<br>
+                Father’s car, where the smell of leather blended with
+                the scent of a peppermint to mask the smoke from his just-blown-out cigarette.
+            </div>
+        </div>
+        
+        <div class="g-item active">
+            <div class="g-title">
+                <span class="bullet" onclick="toggleText(this.parentElement.parentElement)"></span>
+                g.M.04<br> 
+               </div>
+        
+               <div class="g-extra" style="display:block;">
+             
+                hay, civette, indole
+                <br>-<br>
+                Lying in the grass on summer days, surrounded by the earthy
+smell of manure from the nearby fields.
+            </div>
+        </div>
+        <div class="g-item active">
+            <div class="g-title">
+                <span class="bullet" onclick="toggleText(this.parentElement.parentElement)"></span>
+                g.MB.03<br> 
+               </div>
+        
+               <div class="g-extra" style="display:block;">
+             
+                cigarettes ashes, leather, velvet, vetiver, ebanol
+                <br>-<br>
+                Grandma’s closet, where the smell of cigarette
+                smoke had lingered in her leather handbags and wool coats, mixed with the sweet,
+                spicy trace of her perfume Black Opium by Yves Saint Laurent.            </div>
+        </div>
+        <div class="g-item active">
+            <div class="g-title">
+                <span class="bullet" onclick="toggleText(this.parentElement.parentElement)"></span>
+                g.NA.07<br> 
+               </div>
+        
+               <div class="g-extra" style="display:block;">
+             
+                moss, birch tar, ceder, patchouli, vetiver, cis-3 hexenol
+                <br>-<br>
+                During a walk in the forest, where the rain soaked the
+                earth and the smell of damp moss and wet leaves hung in the air.            </div>
+        </div>
+        <div class="g-item active">
+            <div class="g-title">
+                <span class="bullet" onclick="toggleText(this.parentElement.parentElement)"></span>
+                g.OH.02 <br> 
+               </div>
+        
+               <div class="g-extra" style="display:block;">
+             
+                ceder, vanilla, guaiacol
+                <br>-<br>
+                Parents’ living room, where the scent of burnt matches
+                and warm vanilla lingered in the soft fabric of the couch, while the fireplace crackled
+                gently in the background.            </div>
+        </div>
+        <div class="g-item active">
+            <div class="g-title">
+                <span class="bullet" onclick="toggleText(this.parentElement.parentElement)"></span>
+                g.S.L.F.05<br> 
+               </div>
+        
+               <div class="g-extra" style="display:block;">
+             
+                leafy greens, tomato stems, green mandarin and a smoky hint of whiskey
+                <br>-<br>
+                This scent was developed for Mangé, titled Sous la feuille.          </div>
+        </div>
+
+        <div class="g-item active">
+            <div class="g-title">
+                <span class="bullet" onclick="toggleText(this.parentElement.parentElement)"></span>
+                g.WO.04<br> 
+               </div>
+        
+               <div class="g-extra" style="display:block;">
+             
+                coffee, orange, tonka bean, pink pepper, coumarin
+                <br>-<br>
+                Parents’ kitchen, where the smell of freshly brewed
+                coffee mixed with the scent of a just-sliced orange.          </div>
+        </div>
+
+
+
+
+       
+    
+        <!-- Meer scent-items toevoegen -->
+    </div>
+    
+    <script>
+        function toggleText(element) {
+            const extra = element.querySelector('.g-extra');
+        
+            // toggle tekst
+            const isOpen = extra.style.display === 'block';
+            extra.style.display = isOpen ? 'none' : 'block';
+        
+            // toggle bolletje (active class)
+            element.classList.toggle('active', !isOpen);
+        }
+        </script>
+        
+        <script>
+            const images = ['setstaand.jpg','square1.jpg','square3.jpg','Naamloos-1.jpg','square2.jpg'];
+            let imageIndex = 0;
+           
+            document.addEventListener('click', function (e) {
+                const img = document.createElement('img');
+                img.src = images[imageIndex];
+                img.className = 'popup-image';
+                img.style.left = e.clientX + 'px';
+                img.style.top  = e.clientY + 'px';
+                document.body.appendChild(img);
+                imageIndex = (imageIndex + 1) % images.length;
+            });
+            </script>
+    </body>
+    
