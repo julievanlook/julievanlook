@@ -18,12 +18,22 @@
     transition: color 0.2s ease;
 }
 
-.nav-links a:hover { color: rgb(213, 213, 213); }
+.nav-links a:hover {
+    color: rgb(213, 213, 213);
+    cursor: pointer;
+}
 
-.nav-item .box { margin-right: 6px; }
-.nav-item .box::before { content: "☐"; }
-.nav-item.active .box::before { content: "☒"; }
+.nav-item .box {
+    margin-right: 6px;
+}
 
+.nav-item .box::before {
+    content: "☐";
+}
+
+.nav-item.active .box::before {
+    content: "☒";
+}
 /* ===== RECHTERKOLOM ===== */
 .about-info {
     width: 320px;
