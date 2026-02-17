@@ -1,54 +1,50 @@
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-/* ===== NAV LINKS & VAKJES ===== */
-.nav-links {
-    font-size: 14px;
-    line-height: 1.4;
-    margin: 20px;
-    z-index: 999;
-}
-
-.nav-links a {
-    margin-right: 20px;
-    color: #000;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-    color: rgb(213, 213, 213);
-    cursor: pointer;
-}
-
-.nav-item .box {
-    margin-right: 6px;
-}
-
-.nav-item .box::before {
-    content: "☐";
-}
-
-.nav-item.active .box::before {
-    content: "☒";
-}
-/* ===== RECHTERKOLOM ===== */
+    /* ===== NAV LINKS & VAKJES ===== */
+    .nav-links {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        font-size: 14px;
+        line-height: 1.4;
+        z-index: 999;
+    }
+    
+    .nav-links a {
+        margin-right: 20px;
+        color: #000;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+    
+    .nav-links a:hover { color: rgb(213, 213, 213); }
+    
+    .nav-item .box { margin-right: 6px; }
+    .nav-item .box::before { content: "☐"; }
+    .nav-item.active .box::before { content: "☒"; }
+    
+/* ===== RECHTERKOLOM (gedeeld over alle pagina’s) ===== */
 .about-info {
-    width: 320px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 320px;          /* 🔑 identiek aan About & Installations */
     font-size: 14px;
     line-height: 1.4;
-    margin: 20px;
+    z-index: 999;
     text-align: left;
+}
+
+.about-info {
+    margin: 0;             /* 🔑 geen extra inspringing */
+    font-size: 14px;
     font-weight: normal;
 }
 
+    
 .about-link a:hover {
-    color: rgb(213, 213, 213);
+    color: rgb(213, 213, 213); /* grijs bij hover */
     cursor: pointer;
 }
-
 .about-name {
     font-size: 14px;
     font-weight: normal;
@@ -62,38 +58,41 @@
     cursor: pointer;
 }
 
-/* ===== SCENT ITEMS ===== */
-.scent-items {
-    margin: 20px auto 40px auto;
+    
+    /* ===== SCENT ITEMS ===== */
+    .scent-items {
+    margin: 20px auto 40px auto;  /* ← zelfde top-hoogte als about-info */
     max-width: 660px;
 }
 
-.g-item { cursor: pointer; margin-bottom: 18px; }
-.g-title { font-size: 14px; line-height: 1.4; }
-.g-title::first-line { font-size: 16px; font-weight: bold; margin-left:100px; }
-.g-item:hover .g-title { color: rgba(0,0,0,0.2); }
-
-.g-extra {
+    
+    .g-item { cursor: pointer; margin-bottom: 18px; }
+    .g-title { font-size: 14px; line-height: 1.4; }
+    .g-title::first-line { font-size: 16px; font-weight: bold;margin-left:100px }
+    .g-item:hover .g-title { color: rgba(0,0,0,0.2); }
+    /* extra tekst uitlijnen met de g */
+    .g-extra {
     display: none;
     margin-top: 6px;
-    margin-left: 36px;
-    max-width: 420px;
-    font-size: 13px;
+    margin-left: 36px;     /* ← meer naar het midden */
+    max-width: 420px;      /* iets smaller = rustiger */
+    font-size: 13px;       /* subtiel kleiner */
     line-height: 1.45;
 }
 
-/* popup images */
-.popup-image {
-    position: fixed;
-    width: 80px;
-    height: auto;
-    z-index: 9999;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
 
-/* bolletjes */
+    
+    /* popup images */
+    .popup-image {
+        position: fixed;
+        width: 80px;
+        height: auto;
+        z-index: 9999;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    /* bolletje */
 .bullet {
     display: inline-block;
     width: 14px;
@@ -101,74 +100,60 @@
     margin-right: 6px;
     user-select: none;
 }
-.g-item.active .bullet::before { content: "●"; }
-.bullet::before { content: "○"; }
 
-/* ============================= */
-/* RESPONSIVE DESIGN */
-/* ============================= */
-
-/* Desktop only: fixed nav & about */
-@media (min-width: 901px) {
-    .nav-links {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-    }
-
-    .about-info {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        margin: 0;
-    }
+/* actief = zwart gevuld */
+.g-item.active .bullet::before {
+    content: "●";
 }
 
-/* Mobile & tablet */
+.bullet::before {
+    content: "○";
+}
+/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
 
-    /* NAV LINKS */
-    .nav-links {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 20px;
-    }
-
-    .nav-links a {
-        display: block;
-        margin: 0 0 6px 0;
-    }
-
-    /* ABOUT NAAM */
-    .about-info {
-        position: relative;
-        top: auto;
-        right: auto;
-        margin: 0 20px 20px 20px;
-        width: auto;
-        text-align: left;
-    }
-
-    /* SCENT ITEMS */
-    .scent-items {
-        margin: 0 20px 40px 20px;
-        max-width: 100%;
-    }
-
-    .g-title::first-line {
-        margin-left: 0;
-        font-size: 15px;
-    }
-
-    .g-extra {
-        margin-left: 20px;
-        max-width: 100%;
-    }
+/* NAV LINKS */
+.nav-links {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 20px;
 }
 
-</style>
-</head>
+.nav-links a {
+    display: block;
+    margin: 0 0 6px 0;
+}
+
+/* ABOUT NAAM */
+.about-info {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0 20px 20px 20px;
+    width: auto;
+    text-align: left;
+}
+
+/* SCENT ITEMS */
+.scent-items {
+    margin: 0 20px 40px 20px;
+    max-width: 100%;
+}
+
+.g-title::first-line {
+    margin-left: 0;      /* geen harde inspringing */
+    font-size: 15px;
+}
+
+.g-extra {
+    margin-left: 20px;
+    max-width: 100%;
+}
+}
+
+
+    </style>
     
     <body>
     
