@@ -1,149 +1,149 @@
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-    /* ===== NAV LINKS & VAKJES ===== */
+
+/* ===== NAV LINKS & VAKJES ===== */
+.nav-links {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 20px;
+    z-index: 999;
+}
+
+.nav-links a {
+    margin-right: 20px;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: rgb(213, 213, 213);
+    cursor: pointer;
+}
+
+.nav-item .box {
+    margin-right: 6px;
+}
+
+.nav-item .box::before {
+    content: "☐";
+}
+
+.nav-item.active .box::before {
+    content: "☒";
+}
+
+/* ===== ABOUT INFO ===== */
+.about-info {
+    max-width: 320px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #000;
+    text-align: left;
+    margin: 20px;
+}
+
+.about-info h3 {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0 0 14px 0;
+}
+
+.about-info p {
+    font-size: 14px;
+    margin: 0 0 14px 0;
+}
+
+.about-info strong,
+.about-info em {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.about-info a {
+    color: inherit;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.about-info a:hover {
+    color: rgb(213, 213, 213);
+    cursor: pointer;
+}
+
+/* ===== DOWNLOAD ITEMS ===== */
+.download-item {
+    font-size: 14px;
+}
+
+.download-item .circle {
+    margin-right: 6px;
+    text-decoration: none;
+}
+
+.download-item a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+.download-item a:hover {
+    color: rgb(213, 213, 213);
+}
+
+/* ============================= */
+/* DESKTOP ONLY */
+/* ============================= */
+
+@media (min-width: 901px) {
+
     .nav-links {
         position: fixed;
         top: 20px;
         left: 20px;
-        font-size: 14px;
-        line-height: 1.4;
-        z-index: 999;
     }
-    
-    .nav-links a {
-        margin-right: 20px;
-        color: #000;            /* altijd zwart */
-        text-decoration: none;   /* geen underline */
-        transition: color 0.2s ease;
-    }
-    
-    .nav-links a:hover {
-        color: rgb(213, 213, 213);
-        cursor: pointer;
-    }
-    
-    .nav-item .box {
-        margin-right: 6px;
-    }
-    
-    /* standaard leeg */
-    .nav-item .box::before {
-        content: "☐";
-    }
-    
-    /* actieve pagina */
-    .nav-item.active .box::before {
-        content: "☒";
-    }
-    
-    /* ===== ABOUT INFO RECHTSBOVEN ===== */
+
     .about-info {
         position: fixed;
         top: 20px;
         right: 20px;
-        max-width: 320px;
-        font-size: 14px;
-        line-height: 1.4;
-        color: #000;
-        text-align: left;
-        z-index: 999;
+        margin: 0;
     }
-    
-    .about-info h3 {
-        font-size: 14px;
-        font-weight: normal;
-        margin: 0 0 14px 0;
-    }
-    
-    /* Paragrafen */
-    .about-info p {
-        font-size: 14px;
-        margin: 0 0 14px 0;
-    }
-    
-    /* Strong & em alleen stijl */
-    .about-info strong,
-    .about-info em {
-        font-size: 14px;
-        font-weight: normal;
-        font-style: italic;
-    }
-    
-    /* Links in about-info zwart en niet onderlijnd */
-    .about-info a {
-        color: inherit;
-        text-decoration: underline;  /* geen underline */
-        transition: color 0.2s ease;
-    }
-    
-    .about-info a:hover {
-        color: rgb(213, 213, 213);
-        cursor: pointer;
-    }
-    
-    /* Download items */
-    .download-item {
-        font-size: 14px;
-    }
-    
-    .download-item .circle {
-        margin-right: 6px;
-        text-decoration: none; /* cirkel nooit onderlijnd */
-    }
-    
-    .download-item a {
-        text-decoration: underline; /* download link blijft onderlijnd */
-        color: inherit;
-    }
-    
-    .download-item a:hover {
-        color: rgb(213, 213, 213);
-    }
+}
 
-    /* ===== RESPONSIVE ===== */
+/* ============================= */
+/* MOBILE & TABLET */
+/* ============================= */
+
 @media (max-width: 900px) {
 
-/* NAV LINKS */
-.nav-links {
-    position: relative;
-    top: auto;
-    left: auto;
-    margin: 20px;
+    .nav-links {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 20px;
+    }
+
+    .nav-links a {
+        display: block;
+        margin: 0 0 6px 0;
+    }
+
+    .about-info {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 0 20px 20px 20px;
+        width: auto;
+        text-align: left;
+    }
 }
 
-.nav-links a {
-    display: block;
-    margin: 0 0 6px 0;
-}
-
-/* ABOUT NAAM */
-.about-info {
-    position: relative;
-    top: auto;
-    right: auto;
-    margin: 0 20px 20px 20px;
-    width: auto;
-    text-align: left;
-}
-
-/* SCENT ITEMS */
-.scent-items {
-    margin: 0 20px 40px 20px;
-    max-width: 100%;
-}
-
-.g-title::first-line {
-    margin-left: 0;      /* geen harde inspringing */
-    font-size: 15px;
-}
-
-.g-extra {
-    margin-left: 20px;
-    max-width: 100%;
-}
-}
-
-
-    </style>
+</style>
+</head>
     
     <body>
     
