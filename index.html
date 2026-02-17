@@ -1,4 +1,8 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
+
+
   .image-column {
     width: 100%;
     max-width: 800px;   /* pas aan indien nodig */
@@ -223,6 +227,80 @@
     margin-left: 20px;
     max-width: 100%;
 }
+}
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+  .image-column {
+    padding: 100px 30px 60px;
+  }
+
+  .nav-links {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 20px;
+  }
+
+  .about-link {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0 20px 20px 20px;
+    width: auto;
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  body {
+    padding: 0;
+  }
+
+  .image-column {
+    padding: 80px 20px 40px;
+  }
+
+  .image-item {
+    max-width: 100%;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .nav-links a {
+    margin-bottom: 8px;
+  }
+
+  .about-link {
+    margin: 20px;
+    font-size: 13px;
+  }
+
+  .image-caption {
+    font-size: 13px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .caption-counter {
+    position: relative;
+    margin-top: 4px;
+  }
+
+  .nav-arrow {
+    font-size: 35px;
+  }
+
 }
 
 
