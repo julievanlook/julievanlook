@@ -29,15 +29,13 @@
 /* ============================= */
 
 .about-link {
-    position: fixed;
-    top: 20px;
-    right: 20px;
     width: 320px;
     font-size: 14px;
     line-height: 1.4;
-    z-index: 999;
+    margin: 20px;
     text-align: left;
 }
+
 
 .about-link a {
     display: block;
@@ -109,11 +107,9 @@
 /* ============================= */
 
 .nav-links {
-    position: fixed;
-    top: 20px;
-    left: 20px;
     font-size: 14px;
     line-height: 1.4;
+    margin: 20px;
 }
 
 .nav-links a {
@@ -238,6 +234,24 @@
         font-size: 35px;
     }
 }
+    /* Desktop only */
+@media (min-width: 1025px) {
+
+    .nav-links {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+    }
+
+    .about-link {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        margin: 0;
+    }
+
+}
+
 
 </style>
 </head>
