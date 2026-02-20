@@ -1,1 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julie Vanlook</title>
+<meta name="description" content="Julie Vanlook is a visual and olfactory artist based in Brussels.">
+
+<meta property="og:title" content="Julie Vanlook">
+<meta property="og:description" content="Julie Vanlook is a visual and olfactory artist based in Brussels.">
+<meta property="og:image" content="https://julievanlook.com/preview.jpg">
+<meta property="og:type" content="website">
+    
+<link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+
+<style>
+    /* ===== NAV LINKS & VAKJES ===== */
+    .nav-links {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        font-size: 14px;
+        line-height: 1.4;
+        z-index: 999;
+    }
+    
+    .nav-links a {
+        margin-right: 20px;
+        color: #000;            /* altijd zwart */
+        text-decoration: none;   /* geen underline */
+        transition: color 0.2s ease;
+    }
+    
+    .nav-links a:hover {
+        color: rgb(213, 213, 213);
+        cursor: pointer;
+    }
+    
+    .nav-item .box {
+        margin-right: 6px;
+    }
+    
+    /* standaard leeg */
+    .nav-item .box::before {
+        content: "☐";
+    }
+    
+    /* actieve pagina */
+    .nav-item.active .box::before {
+        content: "☒";
+    }
+    
+    /* ===== ABOUT INFO RECHTSBOVEN ===== */
+    .about-info {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        max-width: 320px;
+        font-size: 14px;
+        line-height: 1.4;
+        color: #000;
+        text-align: left;
+        z-index: 999;
+    }
+    
+    .about-info h3 {
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0 0 14px 0;
+    }
+    
+    /* Paragrafen */
+    .about-info p {
+        font-size: 14px;
+        margin: 0 0 14px 0;
+    }
+    
+    /* Strong & em alleen stijl */
+    .about-info strong,
+    .about-info em {
+        font-size: 14px;
+        font-weight: normal;
+        font-style: italic;
+    }
+    
+    /* Links in about-info zwart en niet onderlijnd */
+    .about-info a {
+        color: inherit;
+        text-decoration: underline;  /* geen underline */
+        transition: color 0.2s ease;
+    }
+    
+    .about-info a:hover {
+        color: rgb(213, 213, 213);
+        cursor: pointer;
+    }
+    
+    /* Download items */
+    .download-item {
+        font-size: 14px;
+    }
+    
+    .download-item .circle {
+        margin-right: 6px;
+        text-decoration: none; /* cirkel nooit onderlijnd */
+    }
+    
+    .download-item a {
+        text-decoration: underline; /* download link blijft onderlijnd */
+        color: inherit;
+    }
+    
+    .download-item a:hover {
+        color: rgb(213, 213, 213);
+    }
+
+    /* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+
+/* NAV LINKS */
+.nav-links {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 20px;
+}
+
+.nav-links a {
+    display: block;
+    margin: 0 0 6px 0;
+}
+
+/* ABOUT NAAM */
+.about-info {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0 20px 20px 20px;
+    width: auto;
+    text-align: left;
+}
+
+/* SCENT ITEMS */
+.scent-items {
+    margin: 0 20px 40px 20px;
+    max-width: 100%;
+}
+
+.g-title::first-line {
+    margin-left: 0;      /* geen harde inspringing */
+    font-size: 15px;
+}
+
+.g-extra {
+    margin-left: 20px;
+    max-width: 100%;
+}
+}
+
+
+    </style>
+    
+    <body>
+
+    
+    <!-- NAV LINKS -->
+    <div class="nav-links">
+        <a href="/" class="nav-item installations">
+    <span class="box"></span> Works
+</a>
+     <a href="/scents" class="nav-item scents">
+    <span class="box"></span> Scents
+</a>
+
+<a href="/about" class="nav-item about active">
+    <span class="box"></span> About
+</a>
+            </div>
+    
+    <!-- ABOUT INFO -->
+    <div class="about-info">
+        <h3>
+            Julie Vanlook, Visual / Olfactory Artist <br>
+            <a href="mailto:vanlook.julie@gmail.com">vanlook.julie@gmail.com</a><br>
+            Based in Brussels (BE)
+        </h3>
+    
+        <p>Exhibitions:</p>
+        <p><em>Mangé III</em><br>Giftshop, Ghent (BE)<br>2025</p>
+        <p><em>GRAD show</em><br>Luca School of Arts, Brussels (BE)<br>2025</p>
+        <p><em>Here Be Dragons</em><br>Luca School of Arts, Brussels (BE)<br>2025</p>
+        <p><em>Common Grounds</em><br>BacArtLab, Louvain (BE)<br>2024</p>
+        <p><em>Caravella</em><br>U.square Ixelles, Brussels (BE)<br>2024</p>
+    
+        <p>Press:</p>
+        <p>
+            <a href="https://www.kunstwerkt.be/nl/alle-berichten/kunstletters-031" target="_blank">
+                Interview in Kunstletters Magazine #031 
+            </a><br>2025
+        </p>
+        <p>
+            <a href="https://www.flandersdistrictofcreativity.be/magazine/afstudeerprojecten-2025" target="_blank">
+                The Design Class of 2025: The 25 Best Graduation Projects
+            </a>, online article by Mies Van Roy, Flanders District of Creativity<br>2025
+        </p>
+        <p>Talks:</p>
+        <p>
+            <a href="https://www.kunstwerkt.be/nl/projecten/kunstletters-live-031-wingene-volzet" target="_blank">
+                Kunstletters live (#031) – in conversation with Emma Vanpaemel
+            </a><br>2025
+        </p>
+        <br>
+        <p class="download-item">
+            <span class="circle">○</span>
+            <a href="portfolio.julievanlook.pdf" target="_blank">download portfolio (PDF)</a>
+        </p>
+    
+        <p class="download-item">
+            <span class="circle">○</span>
+            <a href="cv.julievanlook.pdf" target="_blank">download CV (PDF)</a>
+        </p>
+    </div>
+
+
+    </body>
+    
 
