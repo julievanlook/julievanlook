@@ -189,78 +189,45 @@
 /* RESPONSIVE DESIGN */
 /* ============================= */
 
-/* Tablet */
-@media (max-width: 1024px) {
-
-    .image-column {
-        padding: 100px 30px 60px;
-    }
-
-    .nav-links,
-    .about-link {
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        margin: 20px;
-        width: auto;
-    }
+@media (max-width: 900px) {
+/* NAV LINKS */
+.nav-links {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 20px;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-
-    body {
-        padding: 0;
-    }
-
-    .image-column {
-        padding: 80px 20px 40px;
-    }
-
-    .image-item {
-        max-width: 100%;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .nav-links a {
-        margin-bottom: 8px;
-    }
-
-    .about-link {
-        font-size: 13px;
-    }
-
-    .image-caption {
-        font-size: 13px;
-    }
-
-    .nav-arrow {
-        font-size: 35px;
-    }
-}
-    /* Desktop only */
-@media (min-width: 1025px) {
-
-    .nav-links {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-    }
-
-    .about-link {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        margin: 0;
-    }
-
+.nav-links a {
+    display: block;
+    margin: 0 0 6px 0;
 }
 
+/* ABOUT NAAM */
+.about-info {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0 20px 20px 20px;
+    width: auto;
+    text-align: left;
+}
+    /* SCENT ITEMS */
+.scent-items {
+    margin: 0 20px 40px 20px;
+    max-width: 100%;
+}
+
+.g-title::first-line {
+    margin-left: 0;      /* geen harde inspringing */
+    font-size: 15px;
+}
+
+.g-extra {
+    margin-left: 20px;
+    max-width: 100%;
+}
+}
 
 </style>
 </head>
