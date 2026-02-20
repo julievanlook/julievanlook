@@ -64,11 +64,6 @@
         color: #000;
         text-align: left;
         z-index: 999;
-
-          /* Scrollable toevoegen */
-    max-height: 120vh;      /* maximaal 80% van de viewport hoogte */
-    overflow-y: auto;      /* verticale scroll indien nodig */
-    padding-right: 10px;   /* optioneel, zodat scroll niet tekst overlapt */
     }
     
     .about-info h3 {
@@ -124,6 +119,21 @@
 
     /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
+    {
+    .about-info {
+        position: relative;  /* blijft binnen flow */
+        top: auto;
+        right: auto;
+        margin: 0 20px 20px 20px;
+        width: auto;
+        text-align: left;
+
+        /* scroll toevoegen voor kleine schermen */
+        max-height: 50vh;     /* maximaal 50% van viewport hoogte */
+        overflow-y: auto;     /* verticale scroll indien nodig */
+        padding-right: 10px;  /* voorkomt overlap met scrollbar */
+    }
+
 
 /* NAV LINKS */
 .nav-links {
