@@ -77,15 +77,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    
 }
 
 .image-item img,
 .image-item video {
     width: 100%;
     height: auto;
-    max-width: 100%;
     display: block;
-    object-fit: contain;
+    max-width: 100%;
 }
 
 /* ============================= */
@@ -222,7 +223,31 @@
     width: auto;
     text-align: left;
 }
+/* IMAGE COLUMN */
+.image-column {
+    padding: 100px 16px 40px;
+    gap: 30px;
+}
 
+/* IMAGE ITEM */
+.image-item {
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+/* IMAGES + VIDEO */
+.image-item img,
+.image-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* CAPTION */
+.image-caption {
+    font-size: 13px;
+}
+    
 /* SCENT ITEMS */
 .scent-items {
     margin: 0 20px 40px 20px;
