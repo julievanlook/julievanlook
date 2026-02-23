@@ -316,21 +316,42 @@ smell of manure from the nearby fields.
             element.classList.toggle('active', !isOpen);
         }
         </script>
-        
         <script>
-            const images = ['/setstaand.jpg','/square1.jpg','/square3.jpg','/Naamloos-1.jpg','/square2.jpg'];
-            let imageIndex = 0;
-           
-            document.addEventListener('click', function (e) {
-                const img = document.createElement('img');
-                img.src = images[imageIndex];
-                img.className = 'popup-image';
-                img.style.left = e.clientX + 'px';
-                img.style.top  = e.clientY + 'px';
-                document.body.appendChild(img);
-                imageIndex = (imageIndex + 1) % images.length;
-            });
-            </script>
+const images = [
+    '/setstaand.jpg',
+    '/square1.jpg',
+    '/square3.jpg',
+    '/Naamloos-1.jpg',
+    '/square2.jpg'
+];
+
+// Shuffle array bij elke refresh
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// shuffle bij laden pagina
+shuffle(images);
+
+let imageIndex = 0;
+
+document.addEventListener('click', function (e) {
+
+    const img = document.createElement('img');
+    img.src = images[imageIndex];
+    img.className = 'popup-image';
+
+    img.style.left = e.clientX + 'px';
+    img.style.top  = e.clientY + 'px';
+
+    document.body.appendChild(img);
+
+    imageIndex = (imageIndex + 1) % images.length;
+});
+</script>
     </body>
     
 
