@@ -269,9 +269,29 @@ img, video {
     display: block;
 }
 
-/* CAPTION */
+/* CAPTION FIX MOBILE */
 .image-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     font-size: 13px;
+    word-break: break-word;
+}
+
+.caption-header {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.caption-title {
+    max-width: 100%;
+}
+
+.caption-counter {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin-top: 4px;
 }
     
 /* SCENT ITEMS */
