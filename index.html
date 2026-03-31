@@ -375,7 +375,8 @@ img, video {
       </div>
      <!-- IMAGE ITEM  – VIDEO -->
 <div class="image-item">
-    <span class="nav-arrow left" onclick="prevMedia(this)">‹</span>
+<span class="nav-arrow left" onclick="prevMedia(event, this)">‹</span>
+<span class="nav-arrow right" onclick="nextMedia(event, this)">›</span>
 
     <video 
         controls
@@ -470,33 +471,32 @@ img, video {
         counter.textContent = `(${index + 1}-${total})`;
     }
     
-    function nextImage(arrow) {
-        const item = arrow.closest('.image-item');
-        const img = item.querySelector('img');
-        const images = img.dataset.images.split(",");
-        let index = parseInt(img.dataset.index);
-        const total = images.length;
+    function nextMedia(e, arrow) {
+    e.stopPropagation();
+
+    const item = arrow.closest('.image-item');
+    const media = item.querySelector('img, video');
+    const list = media.dataset.media.split(",");
+    let index = parseInt(media.dataset.index);
+    const total = list.length;
+
+    index = (index + 1) % total;
+    switchMedia(item, list[index], index, total);
+}
+
+function prevMedia(e, arrow) {
+    e.stopPropagation();
+
+    const item = arrow.closest('.image-item');
+    const media = item.querySelector('img, video');
+    const list = media.dataset.media.split(",");
+    let index = parseInt(media.dataset.index);
+    const total = list.length;
+
+    index = (index - 1 + total) % total;
+    switchMedia(item, list[index], index, total);
+}
     
-        index = (index + 1) % total;
-        img.src = images[index];
-        img.dataset.index = index;
-    
-        updateCounter(item, index, total);
-    }
-    
-    function prevImage(arrow) {
-        const item = arrow.closest('.image-item');
-        const img = item.querySelector('img');
-        const images = img.dataset.images.split(",");
-        let index = parseInt(img.dataset.index);
-        const total = images.length;
-    
-        index = (index - 1 + total) % total;
-        img.src = images[index];
-        img.dataset.index = index;
-    
-        updateCounter(item, index, total);
-    }
     </script>
     
     
