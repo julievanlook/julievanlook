@@ -19,6 +19,28 @@
 </head>
     
 <style>
+    @media (max-width: 900px) {
+  /* CAPTION FIX MOBILE - OP EEN LIJN */
+  .image-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; /* verticaal centreren */
+      gap: 8px;
+      flex-wrap: nowrap; /* zorg dat alles op één lijn blijft */
+  }
+
+  .caption-text {
+      flex: 1 1 auto;  /* tekst neemt beschikbare ruimte */
+      min-width: 0;     /* voorkomt overflow */
+      white-space: nowrap; /* voorkomt dat tekst op meerdere regels breekt */
+      overflow: hidden;
+      text-overflow: ellipsis; /* snijdt lange tekst af met ... */
+  }
+
+  .caption-counter {
+      flex: 0 0 auto; /* pijltjes en counter behouden hun breedte */
+  }
+}
    
     
     /* ===== FIX MOBILE OVERFLOW ===== */
