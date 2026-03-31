@@ -465,39 +465,7 @@ img, video {
 <div class="lightbox" id="lightbox" onclick="closeGallery()">
     <img id="lightbox-img">
 </div>
-<script>
-    function updateCounter(item, index, total) {
-        const counter = item.querySelector('.caption-counter');
-        counter.textContent = `(${index + 1}-${total})`;
-    }
-    
-    function nextMedia(e, arrow) {
-    e.stopPropagation();
-
-    const item = arrow.closest('.image-item');
-    const media = item.querySelector('img, video');
-    const list = media.dataset.media.split(",");
-    let index = parseInt(media.dataset.index);
-    const total = list.length;
-
-    index = (index + 1) % total;
-    switchMedia(item, list[index], index, total);
-}
-
-function prevMedia(e, arrow) {
-    e.stopPropagation();
-
-    const item = arrow.closest('.image-item');
-    const media = item.querySelector('img, video');
-    const list = media.dataset.media.split(",");
-    let index = parseInt(media.dataset.index);
-    const total = list.length;
-
-    index = (index - 1 + total) % total;
-    switchMedia(item, list[index], index, total);
-}
-    
-    </script>
+<script> function updateCounter(item, index, total) { const counter = item.querySelector('.caption-counter'); counter.textContent = (${index + 1}-${total}); } function nextImage(arrow) { const item = arrow.closest('.image-item'); const img = item.querySelector('img'); const images = img.dataset.images.split(","); let index = parseInt(img.dataset.index); const total = images.length; index = (index + 1) % total; img.src = images[index]; img.dataset.index = index; updateCounter(item, index, total); } function prevImage(arrow) { const item = arrow.closest('.image-item'); const img = item.querySelector('img'); const images = img.dataset.images.split(","); let index = parseInt(img.dataset.index); const total = images.length; index = (index - 1 + total) % total; img.src = images[index]; img.dataset.index = index; updateCounter(item, index, total); } </script>
     
     
   </body>
