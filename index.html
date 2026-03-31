@@ -350,20 +350,24 @@ img, video {
       </div>
      <!-- IMAGE ITEM  -->
      <div class="image-item">
-        <span class="nav-arrow left" onclick="prevImage(this)">‹</span>
+      
         <img 
           src="grandparent.jpg"
           data-images="grandparent.jpg"
           data-index="0"
           alt="Grandparents"
         >
-        <span class="nav-arrow right" onclick="nextImage(this)">›</span>
+        
     
         <div class="image-caption">
           <span class="caption-text">
              <em>Grandparents </em> (2026) – two polaroids, 7 x 8 cm
           </span>
-          <span class="caption-counter">(1-1)</span>
+           <span class="caption-counter">
+    <span class="arrow" onclick="prevImage(this)">‹</span>
+    (1-1)
+    <span class="arrow" onclick="nextImage(this)">›</span>
+  </span>
         </div>
       </div>
      <!-- IMAGE ITEM  – VIDEO -->
