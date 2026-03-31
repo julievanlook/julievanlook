@@ -327,14 +327,14 @@ img, video {
   <div class="image-column">
        <!-- IMAGE ITEM  -->
      <div class="image-item">
-        <span class="nav-arrow left" onclick="prevImage(this)">‹</span>
+        
         <img 
           src="left.jpg"
           data-images="left.jpg,leftcloseup.jpg,IMG_1940.jpg"
           data-index="0"
           alt="Left"
         >
-        <span class="nav-arrow right" onclick="nextImage(this)">›</span>
+        
     
        <div class="image-caption">
   <span class="caption-text">
@@ -458,7 +458,36 @@ img, video {
 <div class="lightbox" id="lightbox" onclick="closeGallery()">
     <img id="lightbox-img">
 </div>
-<script> function updateCounter(item, index, total) { const counter = item.querySelector('.caption-counter'); counter.textContent = (${index + 1}-${total}); } function nextImage(arrow) { const item = arrow.closest('.image-item'); const img = item.querySelector('img'); const images = img.dataset.images.split(","); let index = parseInt(img.dataset.index); const total = images.length; index = (index + 1) % total; img.src = images[index]; img.dataset.index = index; updateCounter(item, index, total); } function prevImage(arrow) { const item = arrow.closest('.image-item'); const img = item.querySelector('img'); const images = img.dataset.images.split(","); let index = parseInt(img.dataset.index); const total = images.length; index = (index - 1 + total) % total; img.src = images[index]; img.dataset.index = index; updateCounter(item, index, total); } </script>
+<script> 
+    function updateCounter(item, index, total) { const counter = item.querySelector('.caption-counter'); counter.textContent = (${index + 1}-${total}); } 
+function nextImage(item) {
+    const img = item.querySelector('img');
+    const images = img.dataset.images.split(",");
+    let index = parseInt(img.dataset.index);
+    const total = images.length;
+
+    index = (index + 1) % total;
+    img.src = images[index];
+    img.dataset.index = index;
+
+    updateCounter(item, index, total);
+}
+
+function prevImage(item) {
+    const img = item.querySelector('img');
+    const images = img.dataset.images.split(",");
+    let index = parseInt(img.dataset.index);
+    const total = images.length;
+
+    index = (index - 1 + total) % total;
+    img.src = images[index];
+    img.dataset.index = index;
+
+    updateCounter(item, index, total);
+}
+
+
+</script>
     
     
   </body>
