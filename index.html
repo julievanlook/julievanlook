@@ -1,455 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Julie Vanlook</title>
-<meta name="description" content="Julie Vanlook is an olfactory artist based in Brussels. Her work stems from research into the ways scent engages the body and brings emotions to the surface. In he[...]
 
-<meta property="og:title" content="Julie Vanlook">
-<meta property="og:description" content="Julie Vanlook is a visual and olfactory artist based in Brussels.">
-<meta property="og:image" content="https://julievanlook.com/preview.jpg">
-<meta property="og:type" content="website">
-<meta name="keywords" content="Julie Vanlook, olfactory artist Belgium, scent artist Brussels, Belgian installation artist, geur kunstenaar België, olfactorisch kunstenaar, geurkunst, olfactieve [...]
-    
-<link rel="shortcut icon" type="image/png" href="favicon.png">
-    
-
-</head>
-    
 <style>
-    html, body {
-        font-family: 'Sherbone', sherbone medium;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Times New Roman", serif;
+    background:#f3f3f3;
+    color:#111;
+    font-size:13px;
+    line-height:1.25;
+    padding:20px;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:30px;
+}
+
+.site-title{
+    font-size:20px;
+    font-weight:normal;
+}
+
+.about-link{
+    text-decoration:none;
+    color:#111;
+}
+
+.about-link:hover{
+    opacity:0.4;
+}
+
+/* =========================
+LAYOUT
+========================= */
+
+.layout{
+    display:grid;
+    grid-template-columns:
+        1fr
+        220px;
+    gap:60px;
+    align-items:start;
+}
+
+/* =========================
+PROJECT LIST
+========================= */
+
+.project-list{
+    width:100%;
+}
+
+.project-row{
+    display:grid;
+    grid-template-columns:
+        40px
+        40px
+        1fr;
+    gap:10px;
+    padding:2px 0;
+    text-decoration:none;
+    color:#111;
+}
+
+.project-row:hover{
+    opacity:0.4;
+}
+
+.project-year{
+    margin-top:18px;
+    margin-bottom:6px;
+}
+
+.project-title em{
+    font-style:italic;
+}
+
+/* =========================
+RIGHT IMAGES
+========================= */
+
+.preview-column{
+    position:sticky;
+    top:20px;
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.preview-column img{
+    width:100%;
+    display:block;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .layout{
+        grid-template-columns:1fr;
     }
-    @media (max-width: 900px) {
-  /* CAPTION FIX MOBILE - OP EEN LIJN */
-  .image-caption {
-      display: flex;
-      justify-content: space-between;
-      align-items: center; /* verticaal centreren */
-      gap: 8px;
-      flex-wrap: nowrap; /* zorg dat alles op één lijn blijft */
-  }
 
-  .caption-text {
-      flex: 1 1 auto;  /* tekst neemt beschikbare ruimte */
-      min-width: 0;     /* voorkomt overflow */
-      white-space: nowrap; /* voorkomt dat tekst op meerdere regels breekt */
-      overflow: hidden;
-      text-overflow: ellipsis; /* snijdt lange tekst af met ... */
-  }
-
-  .caption-counter {
-      flex: 0 0 auto; /* pijltjes en counter behouden hun breedte */
-  }
-}
-   
-    
-    /* ===== FIX MOBILE OVERFLOW ===== */
-* {
-    box-sizing: border-box;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-img, video {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* ============================= */
-/* BASIS LAYOUT */
-/* ============================= */
-
-.image-column {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: clamp(80px, 10vw, 120px) 
-         clamp(20px, 5vw, 40px) 
-         clamp(40px, 8vw, 80px);
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.image-column img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* ============================= */
-/* ABOUT LINK */
-/* ============================= */
-
-.about-info {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 320px;          /* 🔑 identiek aan About & Installations */
-    font-size: 14px;
-    line-height: 1.4;
-    z-index: 999;
-    text-align: left;
-}
-    
-.about-link a:hover {
-    color: rgb(213, 213, 213); /* grijs bij hover */
-    cursor: pointer;
-}
-.about-name {
-    font-size: 14px;
-    font-weight: normal;
-    color: #000;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.about-name:hover {
-    color: rgb(213, 213, 213);
-    cursor: pointer;
-}
-
-/* ============================= */
-/* IMAGE ITEMS */
-/* ============================= */
-
-.image-item {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    
-}
-
-.image-item img,
-.image-item video {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-width: 100%;
-}
-
-/* ============================= */
-/* CAPTIONS */
-/* ============================= */
-
-.image-caption {
-    width: 100%;
-    margin-top: 8px;
-    position: relative;
-    line-height: 1.4;
-    color: #333;
-
-    font-size: clamp(12px, 1.2vw, 14px);
-}
-
-.caption-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    width: 100%;
-}
-
-.caption-title {
-    max-width: calc(100% - 50px);
-}
-
-.caption-counter {
-    position: absolute;
-    right: 0;
-    top: 0;
-    white-space: nowrap;
-    font-size: clamp(12px, 1.2vw, 14px);
-}
-
- /* ===== NAV LINKS & VAKJES ===== */
-    .nav-links {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        font-size: 14px;
-        line-height: 1.4;
-        z-index: 999;
+    .preview-column{
+        position:relative;
+        top:auto;
+        max-width:220px;
     }
-    
-    .nav-links a {
-        margin-right: 20px;
-        color: #000;
-        text-decoration: none;
-        transition: color 0.2s ease;
+
+    .topbar{
+        margin-bottom:20px;
     }
-    
-    .nav-links a:hover { color: rgb(213, 213, 213); }
-    
-    .nav-item .box { margin-right: 6px; }
-    .nav-item .box::before { content: "☐"; }
-    .nav-item.active .box::before { content: "☒"; }
 
-
-/* ============================= */
-/* LIGHTBOX */
-/* ============================= */
-
-.lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-}
-
-.lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    object-fit: contain;
-}
-
-.lightbox.active {
-    display: flex;
-}
-
- /* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-
-/* NAV LINKS */
-.nav-links {
-    position: relative;
-    top: auto;
-    left: auto;
-    margin: 20px;
-}
-
-.nav-links a {
-    display: block;
-    margin: 0 0 6px 0;
-}
-
-/* ABOUT NAAM */
-.about-info {
-    position: relative;
-    top: auto;
-    right: auto;
-    margin: 0 20px 20px 20px;
-    width: auto;
-    text-align: left;
-}
-/* IMAGE COLUMN */
-.image-column {
-    padding: 100px 16px 40px;
-    gap: 30px;
-}
-
-/* IMAGE ITEM */
-.image-item {
-    max-width: 100%;
-    margin-bottom: 30px;
-}
-
-/* IMAGES + VIDEO */
-.image-item img,
-.image-item video {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* CAPTION FIX MOBILE */
-.image-caption {
-    width: 100%;
-    margin-top: 8px;
-    line-height: 1.4;
-    color: #333;
-    font-size: clamp(12px, 1.2vw, 14px);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 10px;
-    flex-wrap: wrap; /* 🔥 dit is de magie */
-}
-
-.caption-text {
-    flex: 1;
-    min-width: 200px;
-}
-
-.caption-counter {
-    white-space: nowrap;
-}
-
-    
-/* SCENT ITEMS */
-.scent-items {
-    margin: 0 20px 40px 20px;
-    max-width: 100%;
-}
-
-.g-title::first-line {
-    margin-left: 0;      /* geen harde inspringing */
-    font-size: 15px;
-}
-
-.g-extra {
-    margin-left: 20px;
-    max-width: 100%;
-}
-}
-    .caption-counter {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.arrow {
-    cursor: pointer;
-    font-size: 16px;
-    user-select: none;
-    transition: opacity 0.15s ease;
-}
-
-.arrow:hover {
-    opacity: 0.4;
+    body{
+        padding:14px;
+        font-size:12px;
+    }
 }
 
 </style>
+</head>
 
- <body>
-<div class="nav-links">
-  <a href="/" class="nav-item installations active"><span class="box"></span> Works</a>
-  <a href="/scent" class="nav-item scent"><span class="box"></span> Scents</a>
-  <a href="/about" class="nav-item about"><span class="box"></span> About</a>
+<body>
+
+<div class="topbar">
+    <div class="site-title">
+        Julie Vanlook
+    </div>
+
+    <a href="/about" class="about-link">
+        about
+    </a>
 </div>
 
-<div class="about-info">
-  <a href="/about" class="about-name">Julie Vanlook, Visual / Olfactory Artist</a>
-</div>
+<div class="layout">
 
-<div class="image-column">
-     <!-- IMAGE ITEM 1 -->
-  <div class="image-item">
-    <img src="pinkpearls.jpg" data-images="pinkpearls.jpg" data-index="0" alt="Left">
-    <div class="image-caption">
-      <span class="caption-text"><em>Pink Pear(l)s</em> (2026) – g.PP.10, 4 × 4 cm</span>
-      <span class="caption-counter">
-        <span class="arrow" onclick="prevImage(this.closest('.image-item'))">‹</span>
-        <span class="counter-text">(1-1)</span>
-        <span class="arrow" onclick="nextImage(this.closest('.image-item'))">›</span>
-      </span>
+    <!-- LEFT COLUMN -->
+    <div class="project-list">
+
+        <div class="project-year">2026</div>
+
+        <a href="#" class="project-row">
+            <div>P</div>
+            <div>B</div>
+            <div class="project-title">
+                <em>Pink Pear(l)s</em>
+            </div>
+        </a>
+
+        <a href="#" class="project-row">
+            <div>P</div>
+            <div>B</div>
+            <div class="project-title">
+                <em>Left</em>
+            </div>
+        </a>
+
+        <a href="#" class="project-row">
+            <div>P</div>
+            <div>B</div>
+            <div class="project-title">
+                <em>Grandparents</em>
+            </div>
+        </a>
+
+        <a href="#" class="project-row">
+            <div>P</div>
+            <div>V</div>
+            <div class="project-title">
+                <em>Mangé III</em>
+            </div>
+        </a>
+
+        <div class="project-year">2025</div>
+
+        <a href="#" class="project-row">
+            <div>P</div>
+            <div>B</div>
+            <div class="project-title">
+                <em>Smell Memory</em>
+            </div>
+        </a>
+
+        <a href="#" class="project-row">
+            <div>S</div>
+            <div>F</div>
+            <div class="project-title">
+                scent compositions
+            </div>
+        </a>
+
     </div>
-  </div>
 
-  <!-- IMAGE ITEM 1 -->
-  <div class="image-item">
-    <img src="left.jpg" data-images="left.jpg,leftcloseup.jpg,IMG_1940.jpg" data-index="0" alt="Left">
-    <div class="image-caption">
-      <span class="caption-text"><em>Left</em> (2026) – scent sculpture, g.MB.03, 30 × 26 × 110 cm</span>
-      <span class="caption-counter">
-        <span class="arrow" onclick="prevImage(this.closest('.image-item'))">‹</span>
-        <span class="counter-text">(1-3)</span>
-        <span class="arrow" onclick="nextImage(this.closest('.image-item'))">›</span>
-      </span>
+    <!-- RIGHT COLUMN -->
+    <div class="preview-column">
+        <img src="left.jpg" alt="">
+        <img src="pinkpearls.jpg" alt="">
     </div>
-  </div>
-
-  <!-- IMAGE ITEM 2 -->
-  <div class="image-item">
-    <img src="grandparent.jpg" data-images="grandparent.jpg" data-index="0" alt="Grandparents">
-    <div class="image-caption">
-      <span class="caption-text"><em>Grandparents</em> (2026) – two polaroids, 7 x 8 cm</span>
-      <span class="caption-counter">
-        <span class="arrow" onclick="prevImage(this.closest('.image-item'))">‹</span>
-        <span class="counter-text">(1-1)</span>
-        <span class="arrow" onclick="nextImage(this.closest('.image-item'))">›</span>
-      </span>
-    </div>
-  </div>
-
-  <!-- VIDEO ITEM -->
-  <div class="image-item">
-    <video controls data-media="IMG_9292.mov,_DSC8914.jpg" data-index="0">
-      <source src="IMG_9292.mov" type="video/mp4">
-    </video>
-    <div class="image-caption">
-      <span class="caption-text"><em>Mangé III</em> (July, 2025) – scent composition for Mangé, g.SLF.05</span>
-        <br> <br> Mangé is a food performance created in 2023 by Bert Bogaerts (@esca_studio) and Kaat Claes (@f.aat23). <br> During the performance, The scent was diffused live in the space, becoming part of the sensory experience and interacting with the movement, food and atmosphere of the moment.
-      <span class="caption-counter">
-        <span class="arrow" onclick="prevImage(this.closest('.image-item'))">‹</span>
-        <span class="counter-text">(1-2)</span>
-        <span class="arrow" onclick="nextImage(this.closest('.image-item'))">›</span>
-      </span>
-    </div>
-  </div>
-
-  <!-- IMAGE ITEM 3 -->
-  <div class="image-item">
-    <img src="De Geur van Herinnering_Julie Vanlook_03.jpg" data-images="De Geur van Herinnering_Julie Vanlook_03.jpg,tsofm3.jpg" data-index="0" alt="The Scent of Memory">
-    <div class="image-caption">
-      <span class="caption-text"><em>Smell Memory</em> (2025) – scented objects, steel, cotton gloves</span>
-      <span class="caption-counter">
-        <span class="arrow" onclick="prevImage(this.closest('.image-item'))">‹</span>
-        <span class="counter-text">(1-2)</span>
-        <span class="arrow" onclick="nextImage(this.closest('.image-item'))">›</span>
-      </span>
-    </div>
-  </div>
-
-
 
 </div>
 
-<div class="lightbox" id="lightbox" onclick="closeGallery()">
-  <img id="lightbox-img">
-</div>
-
-<script>
-function updateCounter(item, index, total) {
-  const counterText = item.querySelector('.counter-text');
-  counterText.textContent = `(${index + 1}-${total})`;
-}
-
-function nextImage(item) {
-  const img = item.querySelector('img');
-  if (!img || !img.dataset.images) return;
-
-  const images = img.dataset.images.split(",");
-  let index = parseInt(img.dataset.index);
-  const total = images.length;
-
-  index = (index + 1) % total;
-  img.src = images[index];
-  img.dataset.index = index;
-
-  updateCounter(item, index, total);
-}
-
-function prevImage(item) {
-  const img = item.querySelector('img');
-  if (!img || !img.dataset.images) return;
-
-  const images = img.dataset.images.split(",");
-  let index = parseInt(img.dataset.index);
-  const total = images.length;
-
-  index = (index - 1 + total) % total;
-  img.src = images[index];
-  img.dataset.index = index;
-
-  updateCounter(item, index, total);
-}
-</script>
 </body>
 </html>
