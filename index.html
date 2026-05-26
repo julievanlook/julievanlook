@@ -52,6 +52,8 @@ flex-shrink:0;
 font-weight:bold;
 margin-bottom:4px;
 
+cursor:pointer;
+
 }
 
 .info{
@@ -75,11 +77,13 @@ color:black;
 
 cursor:pointer;
 
+display:block;
+
 }
 
 .menu a:hover{
 
-opacity:.5;
+opacity:.45;
 
 }
 
@@ -100,13 +104,14 @@ display:block;
 .item{
 
 cursor:pointer;
+
 margin-bottom:4px;
 
 }
 
 .item:hover{
 
-opacity:.5;
+opacity:.45;
 
 }
 
@@ -122,11 +127,14 @@ max-width:950px;
 
 width:100%;
 
+display:none;
+
 }
 
 .image img{
 
 width:100%;
+
 display:block;
 
 }
@@ -134,24 +142,26 @@ display:block;
 .controls{
 
 margin-top:14px;
-margin-bottom:18px;
+
+margin-bottom:20px;
 
 }
 
 button{
 
 background:none;
+
 border:none;
 
-font-size:15px;
-
 cursor:pointer;
+
+font-size:15px;
 
 }
 
 button:hover{
 
-opacity:.5;
+opacity:.45;
 
 }
 
@@ -159,14 +169,15 @@ opacity:.5;
 
 max-width:800px;
 
-line-height:1.45;
+line-height:1.5;
 
 }
 
 .title{
 
 font-weight:bold;
-margin-bottom:8px;
+
+margin-bottom:10px;
 
 }
 
@@ -202,7 +213,9 @@ width:100%;
 
 <div class="sidebar">
 
-<div class="name">
+<div
+class="name"
+onclick="home()">
 
 Julie Vanlook
 
@@ -301,11 +314,12 @@ about
 
 <div class="content">
 
-<div class="image">
+<div
+id="imageContainer"
+class="image">
 
 <img
-id="projectImage"
-src="">
+id="projectImage">
 
 </div>
 
@@ -318,8 +332,6 @@ class="controls">
 <div
 id="description"
 class="description">
-
-Klik links op works, geur of about.
 
 </div>
 
@@ -334,9 +346,11 @@ const projects={
 left:{
 
 images:[
+
 "left.jpg",
 "leftcloseup.jpg",
 "IMG_1940.jpg"
+
 ],
 
 title:"LEFT",
@@ -345,7 +359,11 @@ text:`
 
 Scent sculpture, 2026.
 
-30 × 26 × 110 cm.
+<br><br>
+
+30 × 26 × 110 cm
+
+<br><br>
 
 Research into memory and scent.
 
@@ -368,8 +386,6 @@ text:`
 Scent installation.
 
 2025.
-
-Objects and smell composition.
 
 `
 
@@ -429,7 +445,7 @@ title:"FOREST COMPOSITION",
 
 text:`
 
-Smell study.
+Scent study.
 
 Natural materials.
 
@@ -450,9 +466,7 @@ title:"MANGÉ III",
 
 text:`
 
-Live scent composition.
-
-Performance work.
+Live scent performance.
 
 2025.
 
@@ -462,9 +476,9 @@ Performance work.
 
 }
 
-let currentProject=null;
+let currentProject=null
 
-let currentImage=0;
+let currentImage=0
 
 function toggleMenu(id){
 
@@ -478,7 +492,6 @@ document
 function openProject(id){
 
 currentProject=
-
 projects[id]
 
 currentImage=0
@@ -490,6 +503,11 @@ render()
 function render(){
 
 if(!currentProject)return
+
+document
+.getElementById(
+"imageContainer"
+).style.display="block"
 
 document
 .getElementById(
@@ -520,9 +538,7 @@ ${currentProject.text}
 
 if(
 
-currentProject
-.images
-.length>1
+currentProject.images.length>1
 
 ){
 
@@ -575,9 +591,7 @@ currentImage++
 if(
 
 currentImage>=
-currentProject
-.images
-.length
+currentProject.images.length
 
 ){
 
@@ -603,9 +617,7 @@ currentImage<0
 
 currentImage=
 
-currentProject
-.images
-.length-1
+currentProject.images.length-1
 
 }
 
@@ -619,10 +631,8 @@ currentProject=null
 
 document
 .getElementById(
-"projectImage"
-).src=
-
-"portrait.jpg"
+"imageContainer"
+).style.display="none"
 
 document
 .getElementById(
@@ -646,7 +656,7 @@ Visual / olfactory artist based in Brussels.
 
 <br><br>
 
-Her work stems from research into scent, embodiment and memory.
+Her work stems from research into scent, memory and embodiment.
 
 <br><br>
 
@@ -655,6 +665,29 @@ contact@julievanlook.com
 `
 
 }
+
+function home(){
+
+currentProject=null
+
+document
+.getElementById(
+"imageContainer"
+).style.display="none"
+
+document
+.getElementById(
+"controls"
+).innerHTML=""
+
+document
+.getElementById(
+"description"
+).innerHTML=""
+
+}
+
+home()
 
 </script>
 
