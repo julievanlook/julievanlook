@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Julie Vanlook</title>
+
+<meta
+name="description"
+content="Julie Vanlook — visual and olfactory artist">
 
 <style>
 
@@ -17,9 +22,14 @@ box-sizing:border-box;
 
 body{
 
-font-family: Helvetica,sans-serif;
-background: white;
+font-family:Helvetica,sans-serif;
+background:white;
+color:black;
+
 padding:25px;
+
+font-size:15px;
+line-height:1.35;
 
 }
 
@@ -32,59 +42,69 @@ gap:40px;
 
 .sidebar{
 
-width:300px;
+width:280px;
+flex-shrink:0;
 
 }
 
 .name{
 
 font-weight:bold;
+margin-bottom:4px;
 
 }
 
 .info{
 
-margin-bottom:30px;
+margin-bottom:28px;
 
 }
 
 .menu{
 
-margin-bottom:20px;
+display:flex;
+flex-direction:column;
+gap:8px;
 
 }
 
 .menu a{
 
-display:block;
-
 text-decoration:none;
 color:black;
-margin-bottom:8px;
-
-}
-
-.work-list{
-
-display:none;
-
-}
-
-.work-list.active{
-
-display:block;
-
-}
-
-.work-item{
 
 cursor:pointer;
 
-margin-bottom:5px;
+}
+
+.menu a:hover{
+
+opacity:.5;
 
 }
 
-.work-item:hover{
+.dropdown{
+
+display:none;
+
+margin-bottom:12px;
+
+}
+
+.dropdown.active{
+
+display:block;
+
+}
+
+.item{
+
+cursor:pointer;
+margin-bottom:4px;
+
+}
+
+.item:hover{
 
 opacity:.5;
 
@@ -94,44 +114,59 @@ opacity:.5;
 
 flex:1;
 
+max-width:950px;
+
 }
 
 .image{
 
 width:100%;
-max-width:900px;
 
 }
 
 .image img{
 
 width:100%;
-
 display:block;
 
 }
 
 .controls{
 
-margin:15px 0;
+margin-top:14px;
+margin-bottom:18px;
 
 }
 
-.controls button{
+button{
 
 background:none;
 border:none;
 
-font-size:16px;
+font-size:15px;
 
 cursor:pointer;
+
+}
+
+button:hover{
+
+opacity:.5;
 
 }
 
 .description{
 
 max-width:800px;
-line-height:1.4;
+
+line-height:1.45;
+
+}
+
+.title{
+
+font-weight:bold;
+margin-bottom:8px;
 
 }
 
@@ -144,6 +179,12 @@ flex-direction:column;
 }
 
 .sidebar{
+
+width:100%;
+
+}
+
+.content{
 
 width:100%;
 
@@ -176,16 +217,18 @@ Based in Brussels
 
 <div class="menu">
 
-<a onclick="toggleWorks()">
+<a onclick="toggleMenu('works')">
 
 works
 
 </a>
 
-<div class="work-list" id="works">
+<div
+id="works"
+class="dropdown">
 
 <div
-class="work-item"
+class="item"
 onclick="openProject('left')">
 
 Left
@@ -193,30 +236,60 @@ Left
 </div>
 
 <div
-class="work-item"
+class="item"
 onclick="openProject('memory')">
 
-SMELL MEMORY
+Smell Memory
 
 </div>
 
 <div
-class="work-item"
+class="item"
 onclick="openProject('pearls')">
 
-PINK PEAR(L)S
+Pink Pear(l)s
 
 </div>
 
 </div>
 
-<a href="/geur">
+<a onclick="toggleMenu('geur')">
 
 geur
 
 </a>
 
-<a href="/about">
+<div
+id="geur"
+class="dropdown">
+
+<div
+class="item"
+onclick="openProject('amber')">
+
+Amber Memory
+
+</div>
+
+<div
+class="item"
+onclick="openProject('forest')">
+
+Forest Composition
+
+</div>
+
+<div
+class="item"
+onclick="openProject('mange')">
+
+Mangé III
+
+</div>
+
+</div>
+
+<a onclick="showAbout()">
 
 about
 
@@ -232,17 +305,237 @@ about
 
 <img
 id="projectImage"
-src="left.jpg">
+src="">
 
 </div>
 
-<div class="controls">
+<div
+id="controls"
+class="controls">
 
-<span id="counter">
+</div>
 
-1 / 3
+<div
+id="description"
+class="description">
 
-</span>
+Klik links op works, geur of about.
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const projects={
+
+left:{
+
+images:[
+"left.jpg",
+"leftcloseup.jpg",
+"IMG_1940.jpg"
+],
+
+title:"LEFT",
+
+text:`
+
+Scent sculpture, 2026.
+
+30 × 26 × 110 cm.
+
+Research into memory and scent.
+
+`
+
+},
+
+memory:{
+
+images:[
+
+"grandparent.jpg"
+
+],
+
+title:"SMELL MEMORY",
+
+text:`
+
+Scent installation.
+
+2025.
+
+Objects and smell composition.
+
+`
+
+},
+
+pearls:{
+
+images:[
+
+"pinkpearls.jpg"
+
+],
+
+title:"PINK PEAR(L)S",
+
+text:`
+
+Object work.
+
+2026.
+
+4 × 4 cm.
+
+`
+
+},
+
+amber:{
+
+images:[
+
+"amber.jpg"
+
+],
+
+title:"AMBER MEMORY",
+
+text:`
+
+Olfactory composition.
+
+2025.
+
+`
+
+},
+
+forest:{
+
+images:[
+
+"forest.jpg"
+
+],
+
+title:"FOREST COMPOSITION",
+
+text:`
+
+Smell study.
+
+Natural materials.
+
+`
+
+},
+
+mange:{
+
+images:[
+
+"mange.jpg",
+"mange2.jpg"
+
+],
+
+title:"MANGÉ III",
+
+text:`
+
+Live scent composition.
+
+Performance work.
+
+2025.
+
+`
+
+}
+
+}
+
+let currentProject=null;
+
+let currentImage=0;
+
+function toggleMenu(id){
+
+document
+.getElementById(id)
+.classList
+.toggle("active")
+
+}
+
+function openProject(id){
+
+currentProject=
+
+projects[id]
+
+currentImage=0
+
+render()
+
+}
+
+function render(){
+
+if(!currentProject)return
+
+document
+.getElementById(
+"projectImage"
+).src=
+
+currentProject
+.images[
+currentImage
+]
+
+document
+.getElementById(
+"description"
+).innerHTML=
+
+`
+
+<div class="title">
+
+${currentProject.title}
+
+</div>
+
+${currentProject.text}
+
+`
+
+if(
+
+currentProject
+.images
+.length>1
+
+){
+
+document
+.getElementById(
+"controls"
+).innerHTML=
+
+`
+
+${currentImage+1}
+of
+${currentProject.images.length}
 
 <button onclick="prevImage()">
 
@@ -258,150 +551,113 @@ Next
 
 </button>
 
-</div>
-
-<div
-class="description"
-id="description">
-
-Klik links op een work.
-
-</div>
-
-</div>
-
-</div>
-
-<script>
-
-let projects={
-
-left:{
-
-images:[
-"left.jpg",
-"leftcloseup.jpg",
-"IMG_1940.jpg"
-],
-
-title:"LEFT",
-
-text:"Scent sculpture, 2026."
-
-},
-
-memory:{
-
-images:[
-"grandparent.jpg"
-],
-
-title:"SMELL MEMORY",
-
-text:"Scent installation 2025."
-
-},
-
-pearls:{
-
-images:[
-"pinkpearls.jpg"
-],
-
-title:"PINK PEAR(L)S",
-
-text:"Object work 2026."
+`
 
 }
 
-}
-
-let currentProject=null;
-let currentImage=0;
-
-function toggleWorks(){
+else{
 
 document
-.getElementById("works")
-.classList
-.toggle("active");
+.getElementById(
+"controls"
+).innerHTML=""
 
 }
-
-function openProject(id){
-
-currentProject=projects[id];
-
-currentImage=0;
-
-render();
-
-}
-
-function render(){
-
-if(!currentProject)return;
-
-document
-.getElementById("projectImage")
-.src=
-currentProject.images[currentImage];
-
-document
-.getElementById("counter")
-.textContent=
-`${currentImage+1} / ${currentProject.images.length}`;
-
-document
-.getElementById("description")
-.innerHTML=`
-
-<b>${currentProject.title}</b>
-
-<br><br>
-
-${currentProject.text}
-
-`;
 
 }
 
 function nextImage(){
 
-if(!currentProject)return;
+if(!currentProject)return
 
-currentImage++;
+currentImage++
 
 if(
-currentImage>=currentProject.images.length
+
+currentImage>=
+currentProject
+.images
+.length
+
 ){
 
-currentImage=0;
+currentImage=0
 
 }
 
-render();
+render()
 
 }
 
 function prevImage(){
 
-if(!currentProject)return;
+if(!currentProject)return
 
-currentImage--;
+currentImage--
 
-if(currentImage<0){
+if(
+
+currentImage<0
+
+){
 
 currentImage=
-currentProject.images.length-1;
+
+currentProject
+.images
+.length-1
 
 }
 
-render();
+render()
+
+}
+
+function showAbout(){
+
+currentProject=null
+
+document
+.getElementById(
+"projectImage"
+).src=
+
+"portrait.jpg"
+
+document
+.getElementById(
+"controls"
+).innerHTML=""
+
+document
+.getElementById(
+"description"
+).innerHTML=
+
+`
+
+<div class="title">
+
+Julie Vanlook
+
+</div>
+
+Visual / olfactory artist based in Brussels.
+
+<br><br>
+
+Her work stems from research into scent, embodiment and memory.
+
+<br><br>
+
+contact@julievanlook.com
+
+`
 
 }
 
 </script>
 
 </body>
+
 </html>
