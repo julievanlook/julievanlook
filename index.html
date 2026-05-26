@@ -50,9 +50,9 @@ flex-shrink:0;
 .name{
 
 font-weight:bold;
-margin-bottom:4px;
-
 cursor:pointer;
+
+margin-bottom:4px;
 
 }
 
@@ -66,6 +66,7 @@ margin-bottom:28px;
 
 display:flex;
 flex-direction:column;
+
 gap:8px;
 
 }
@@ -125,9 +126,9 @@ max-width:950px;
 
 .image{
 
-width:100%;
-
 display:none;
+
+width:100%;
 
 }
 
@@ -142,7 +143,6 @@ display:block;
 .controls{
 
 margin-top:14px;
-
 margin-bottom:20px;
 
 }
@@ -153,9 +153,9 @@ background:none;
 
 border:none;
 
-cursor:pointer;
-
 font-size:15px;
+
+cursor:pointer;
 
 }
 
@@ -346,11 +346,9 @@ const projects={
 left:{
 
 images:[
-
 "left.jpg",
 "leftcloseup.jpg",
 "IMG_1940.jpg"
-
 ],
 
 title:"LEFT",
@@ -374,9 +372,7 @@ Research into memory and scent.
 memory:{
 
 images:[
-
 "grandparent.jpg"
-
 ],
 
 title:"SMELL MEMORY",
@@ -387,6 +383,8 @@ Scent installation.
 
 2025.
 
+Objects and smell composition.
+
 `
 
 },
@@ -394,9 +392,7 @@ Scent installation.
 pearls:{
 
 images:[
-
 "pinkpearls.jpg"
-
 ],
 
 title:"PINK PEAR(L)S",
@@ -416,9 +412,7 @@ Object work.
 amber:{
 
 images:[
-
 "amber.jpg"
-
 ],
 
 title:"AMBER MEMORY",
@@ -436,9 +430,7 @@ Olfactory composition.
 forest:{
 
 images:[
-
 "forest.jpg"
-
 ],
 
 title:"FOREST COMPOSITION",
@@ -456,10 +448,8 @@ Natural materials.
 mange:{
 
 images:[
-
 "mange.jpg",
 "mange2.jpg"
-
 ],
 
 title:"MANGÉ III",
@@ -477,7 +467,6 @@ Live scent performance.
 }
 
 let currentProject=null
-
 let currentImage=0
 
 function toggleMenu(id){
@@ -522,6 +511,11 @@ currentImage
 document
 .getElementById(
 "description"
+).style.marginTop="0"
+
+document
+.getElementById(
+"description"
 ).innerHTML=
 
 `
@@ -537,9 +531,7 @@ ${currentProject.text}
 `
 
 if(
-
 currentProject.images.length>1
-
 ){
 
 document
@@ -589,10 +581,8 @@ if(!currentProject)return
 currentImage++
 
 if(
-
 currentImage>=
 currentProject.images.length
-
 ){
 
 currentImage=0
@@ -610,13 +600,10 @@ if(!currentProject)return
 currentImage--
 
 if(
-
 currentImage<0
-
 ){
 
 currentImage=
-
 currentProject.images.length-1
 
 }
@@ -646,17 +633,16 @@ document
 
 `
 
-<div class="title">
-
 Julie Vanlook
 
-</div>
+<br><br>
 
 Visual / olfactory artist based in Brussels.
 
 <br><br>
 
-Her work stems from research into scent, memory and embodiment.
+Her work stems from research into scent,
+memory and embodiment.
 
 <br><br>
 
