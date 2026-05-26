@@ -4,8 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Julie Vanlook</title>
 
@@ -13,21 +12,23 @@ content="width=device-width, initial-scale=1.0">
 name="description"
 content="Julie Vanlook — visual and olfactory artist">
 
+<!-- SCRIPT FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-
 margin:0;
 padding:0;
 box-sizing:border-box;
-
 }
 
 body{
 
-font-family:'Times', 'Times New Roman', serif;
+font-family:'Times New Roman', serif;
 
 background:white;
 color:black;
@@ -36,8 +37,7 @@ padding:25px;
 
 font-size:16px;
 line-height:1.35;
-font-weight: 300;
- 
+font-weight:300;
 
 }
 
@@ -55,25 +55,35 @@ flex-shrink:0;
 
 }
 
+/* NAME */
+
 .name{
 
-font-family:'Times', 'Times New Roman', serif;
+font-family:'Allura', cursive;
 
-font-size:16px;
-line-height:1.35;
-font-weight: 300;
+font-size:72px;
+
+line-height:.75;
+
+font-weight:400;
+
+letter-spacing:.5px;
 
 cursor:pointer;
 
-line-height:.85;
+margin-bottom:12px;
 
 }
+
+/* INFO */
 
 .info{
 
 margin-bottom:28px;
 
 }
+
+/* MENU */
 
 .menu{
 
@@ -135,6 +145,8 @@ width:fit-content;
 opacity:.45;
 
 }
+
+/* CONTENT */
 
 .content{
 
@@ -203,30 +215,24 @@ margin-bottom:10px;
 
 }
 
+/* MOBILE */
+
 @media(max-width:900px){
 
 .container{
-
 flex-direction:column;
-
 }
 
 .sidebar{
-
 width:100%;
-
 }
 
 .content{
-
 width:100%;
-
 }
 
 .name{
-
-font-size:32pt;
-
+font-size:56px;
 }
 
 }
@@ -258,15 +264,12 @@ based in Brussels
 
 <div class="menu">
 
-<a
-onclick="toggleMenu('works')">
-
+<a onclick="toggleMenu('works')">
 works
-
 </a>
 
 <div
-id="Works"
+id="works"
 class="dropdown">
 
 <div
@@ -295,11 +298,8 @@ Pink Pear(l)s
 
 </div>
 
-<a
-onclick="toggleMenu('scents')">
-
+<a onclick="toggleMenu('scents')">
 scents
-
 </a>
 
 <div
@@ -308,68 +308,16 @@ class="dropdown">
 
 <div
 class="item"
-onclick="openProject('g.AV.03')">
+onclick="openProject('gav03')">
 
 g.AV.03
 
 </div>
 
-<div
-class="item"
-onclick="openProject('g.BB.04')">
-
-g.BB.04
-
 </div>
 
-<div
-class="item"
-onclick="openProject('g.MB.03')">
-
-g.MB.03
-
-</div>
-
- <div
-class="item"
-onclick="openProject('g.NA.07')">
-
- g.NA.07
-
-</div>
-
- <div
-class="item"
-onclick="openProject('g.OH.02')">
-
- g.OH.02
-
-</div>
-
-  <div
-class="item"
-onclick="openProject('g.SF.05')">
-
- g.SF.05
-
-</div>
-
- <div
-class="item"
-onclick="openProject('g.WO.04')">
-
-g.WO.04
-
-</div>
-
- 
-</div>
-
-<a
-onclick="showAbout()">
-
+<a onclick="showAbout()">
 about
-
 </a>
 
 </div>
@@ -382,8 +330,7 @@ about
 id="imageContainer"
 class="image">
 
-<img
-id="projectImage">
+<img id="projectImage">
 
 </div>
 
@@ -410,11 +357,9 @@ const projects={
 left:{
 
 images:[
-
 "left.jpg",
 "leftcloseup.jpg",
 "IMG_1940.jpg"
-
 ],
 
 title:"LEFT",
@@ -438,9 +383,7 @@ Research into memory and scent.
 memory:{
 
 images:[
-
 "grandparent.jpg"
-
 ],
 
 title:"SMELL MEMORY",
@@ -464,9 +407,7 @@ Objects and smell composition.
 pearls:{
 
 images:[
-
 "pinkpearls.jpg"
-
 ],
 
 title:"PINK PEAR(L)S",
@@ -487,66 +428,24 @@ Object work
 
 },
 
-g.AV.03:{
+gav03:{
 
 title:"g.AV.03",
+
+images:[
+"gav03.jpg"
+],
 
 text:`
 
 musk, peppermint, tobacco, leather
 
--
+<br><br>
 
 a closed space
-holding
-    	smoke
-    	sugar
-   	skin
-
-<br><br>
-
-2025
-
-`
-
-},
-
-forest:{
-
-images:[
-
-"forest.jpg"
-
-],
-
-title:"FOREST COMPOSITION",
-
-text:`
-
-Scent study
-
-<br><br>
-
-Natural materials
-
-`
-
-},
-
-mange:{
-
-images:[
-
-"mange.jpg",
-"mange2.jpg"
-
-],
-
-title:"MANGÉ III",
-
-text:`
-
-Live scent performance
+holding smoke,
+sugar,
+skin
 
 <br><br>
 
@@ -559,7 +458,6 @@ Live scent performance
 }
 
 let currentProject=null
-
 let currentImage=0
 
 function toggleMenu(id){
@@ -573,8 +471,7 @@ document
 
 function openProject(id){
 
-currentProject=
-projects[id]
+currentProject=projects[id]
 
 currentImage=0
 
@@ -587,24 +484,16 @@ function render(){
 if(!currentProject)return
 
 document
-.getElementById(
-"imageContainer"
-).style.display="block"
+.getElementById("imageContainer")
+.style.display="block"
 
 document
-.getElementById(
-"projectImage"
-).src=
-
-currentProject
-.images[
-currentImage
-]
+.getElementById("projectImage")
+.src=currentProject.images[currentImage]
 
 document
-.getElementById(
-"description"
-).innerHTML=
+.getElementById("description")
+.innerHTML=
 
 `
 
@@ -618,36 +507,26 @@ ${currentProject.text}
 
 `
 
-if(
-currentProject
-.images.length>1
-){
+if(currentProject.images.length>1){
 
 document
-.getElementById(
-"controls"
-).innerHTML=
+.getElementById("controls")
+.innerHTML=
 
 `
 
 ${currentImage+1}
- / 
+ /
 ${currentProject.images.length}
 
-<button
-onclick="prevImage()">
-
+<button onclick="prevImage()">
 Previous
-
 </button>
 
 |
 
-<button
-onclick="nextImage()">
-
+<button onclick="nextImage()">
 Next
-
 </button>
 
 `
@@ -657,9 +536,8 @@ Next
 else{
 
 document
-.getElementById(
-"controls"
-).innerHTML=""
+.getElementById("controls")
+.innerHTML=""
 
 }
 
@@ -671,12 +549,7 @@ if(!currentProject)return
 
 currentImage++
 
-if(
-
-currentImage>=
-currentProject.images.length
-
-){
+if(currentImage>=currentProject.images.length){
 
 currentImage=0
 
@@ -692,9 +565,7 @@ if(!currentProject)return
 
 currentImage--
 
-if(
-currentImage<0
-){
+if(currentImage<0){
 
 currentImage=
 currentProject.images.length-1
@@ -710,19 +581,16 @@ function showAbout(){
 currentProject=null
 
 document
-.getElementById(
-"imageContainer"
-).style.display="none"
+.getElementById("imageContainer")
+.style.display="none"
 
 document
-.getElementById(
-"controls"
-).innerHTML=""
+.getElementById("controls")
+.innerHTML=""
 
 document
-.getElementById(
-"description"
-).innerHTML=
+.getElementById("description")
+.innerHTML=
 
 `
 
@@ -739,7 +607,7 @@ memory and embodiment.
 
 <br><br>
 
-contact@julievanlook.com
+vanlook.julie@gmail.com
 
 `
 
@@ -750,19 +618,16 @@ function home(){
 currentProject=null
 
 document
-.getElementById(
-"imageContainer"
-).style.display="none"
+.getElementById("imageContainer")
+.style.display="none"
 
 document
-.getElementById(
-"controls"
-).innerHTML=""
+.getElementById("controls")
+.innerHTML=""
 
 document
-.getElementById(
-"description"
-).innerHTML=""
+.getElementById("description")
+.innerHTML=""
 
 }
 
