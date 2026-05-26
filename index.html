@@ -4,7 +4,8 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Julie Vanlook</title>
 
@@ -12,17 +13,24 @@
 name="description"
 content="Julie Vanlook — visual and olfactory artist">
 
+<link
+href="https://fonts.googleapis.com/css2?family=Smooch&display=swap"
+rel="stylesheet">
+
 <style>
 
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
+
 }
 
 body{
 
 font-family:Helvetica,sans-serif;
+
 background:white;
 color:black;
 
@@ -49,10 +57,17 @@ flex-shrink:0;
 
 .name{
 
-font-weight:bold;
+font-family:'Smooch',cursive;
+
+font-size:36pt;
+
+font-weight:400;
+
 cursor:pointer;
 
-margin-bottom:4px;
+line-height:.85;
+
+margin-bottom:14px;
 
 }
 
@@ -74,11 +89,14 @@ gap:8px;
 .menu a{
 
 text-decoration:none;
+
 color:black;
 
 cursor:pointer;
 
 display:block;
+
+width:fit-content;
 
 }
 
@@ -94,6 +112,8 @@ display:none;
 
 margin-bottom:12px;
 
+padding-left:10px;
+
 }
 
 .dropdown.active{
@@ -107,6 +127,8 @@ display:block;
 cursor:pointer;
 
 margin-bottom:4px;
+
+width:fit-content;
 
 }
 
@@ -153,9 +175,11 @@ background:none;
 
 border:none;
 
+cursor:pointer;
+
 font-size:15px;
 
-cursor:pointer;
+font-family:inherit;
 
 }
 
@@ -201,6 +225,12 @@ width:100%;
 
 }
 
+.name{
+
+font-size:32pt;
+
+}
+
 }
 
 </style>
@@ -230,7 +260,8 @@ Based in Brussels
 
 <div class="menu">
 
-<a onclick="toggleMenu('works')">
+<a
+onclick="toggleMenu('works')">
 
 works
 
@@ -266,7 +297,8 @@ Pink Pear(l)s
 
 </div>
 
-<a onclick="toggleMenu('geur')">
+<a
+onclick="toggleMenu('geur')">
 
 geur
 
@@ -302,7 +334,8 @@ Mangé III
 
 </div>
 
-<a onclick="showAbout()">
+<a
+onclick="showAbout()">
 
 about
 
@@ -346,16 +379,18 @@ const projects={
 left:{
 
 images:[
+
 "left.jpg",
 "leftcloseup.jpg",
 "IMG_1940.jpg"
+
 ],
 
 title:"LEFT",
 
 text:`
 
-Scent sculpture, 2026.
+Scent sculpture, 2026
 
 <br><br>
 
@@ -372,16 +407,22 @@ Research into memory and scent.
 memory:{
 
 images:[
+
 "grandparent.jpg"
+
 ],
 
 title:"SMELL MEMORY",
 
 text:`
 
-Scent installation.
+Scent installation
 
-2025.
+<br><br>
+
+2025
+
+<br><br>
 
 Objects and smell composition.
 
@@ -392,18 +433,24 @@ Objects and smell composition.
 pearls:{
 
 images:[
+
 "pinkpearls.jpg"
+
 ],
 
 title:"PINK PEAR(L)S",
 
 text:`
 
-Object work.
+Object work
 
-2026.
+<br><br>
 
-4 × 4 cm.
+2026
+
+<br><br>
+
+4 × 4 cm
 
 `
 
@@ -412,16 +459,20 @@ Object work.
 amber:{
 
 images:[
+
 "amber.jpg"
+
 ],
 
 title:"AMBER MEMORY",
 
 text:`
 
-Olfactory composition.
+Olfactory composition
 
-2025.
+<br><br>
+
+2025
 
 `
 
@@ -430,16 +481,20 @@ Olfactory composition.
 forest:{
 
 images:[
+
 "forest.jpg"
+
 ],
 
 title:"FOREST COMPOSITION",
 
 text:`
 
-Scent study.
+Scent study
 
-Natural materials.
+<br><br>
+
+Natural materials
 
 `
 
@@ -448,17 +503,21 @@ Natural materials.
 mange:{
 
 images:[
+
 "mange.jpg",
 "mange2.jpg"
+
 ],
 
 title:"MANGÉ III",
 
 text:`
 
-Live scent performance.
+Live scent performance
 
-2025.
+<br><br>
+
+2025
 
 `
 
@@ -467,6 +526,7 @@ Live scent performance.
 }
 
 let currentProject=null
+
 let currentImage=0
 
 function toggleMenu(id){
@@ -511,11 +571,6 @@ currentImage
 document
 .getElementById(
 "description"
-).style.marginTop="0"
-
-document
-.getElementById(
-"description"
 ).innerHTML=
 
 `
@@ -531,7 +586,8 @@ ${currentProject.text}
 `
 
 if(
-currentProject.images.length>1
+currentProject
+.images.length>1
 ){
 
 document
@@ -542,10 +598,11 @@ document
 `
 
 ${currentImage+1}
-of
+ / 
 ${currentProject.images.length}
 
-<button onclick="prevImage()">
+<button
+onclick="prevImage()">
 
 Previous
 
@@ -553,7 +610,8 @@ Previous
 
 |
 
-<button onclick="nextImage()">
+<button
+onclick="nextImage()">
 
 Next
 
@@ -581,8 +639,10 @@ if(!currentProject)return
 currentImage++
 
 if(
+
 currentImage>=
 currentProject.images.length
+
 ){
 
 currentImage=0
