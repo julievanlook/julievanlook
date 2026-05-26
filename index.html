@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Julie Vanlook</title>
-
-<meta name="description" content="Julie Vanlook is een visueel en olfactorisch kunstenaar uit België.">
-<meta property="og:title" content="Julie Vanlook">
-<meta property="og:description" content="Julie Vanlook — Visual / Olfactory Artist">
 
 <style>
 
@@ -20,92 +17,135 @@ box-sizing:border-box;
 
 body{
 
-font-family: Arial, sans-serif;
+font-family:Arial,sans-serif;
 background: white;
-color:black;
+padding:25px;
 
-padding:48px;
-
-font-size:15px;
-line-height:1.35;
-
-min-height:100vh;
 }
 
 .container{
 
 display:flex;
-justify-content:space-between;
-align-items:flex-start;
+gap:40px;
 
 }
 
-.left{
+.sidebar{
 
-max-width:280px;
+width:300px;
 
 }
 
 .name{
 
-font-weight:600;
-margin-bottom:2px;
+font-weight:bold;
 
 }
 
 .info{
 
-margin-bottom:28px;
+margin-bottom:30px;
 
 }
 
-.nav{
+.menu{
 
-display:flex;
-flex-direction:column;
-gap:10px;
+margin-bottom:20px;
 
 }
 
-.nav a{
+.menu a{
+
+display:block;
 
 text-decoration:none;
 color:black;
-
-transition:opacity .2s;
-
-}
-
-.nav a:hover{
-
-opacity:.4;
+margin-bottom:8px;
 
 }
 
-.quote{
+.work-list{
 
-max-width:520px;
+display:none;
+
+}
+
+.work-list.active{
+
+display:block;
 
 }
 
-@media(max-width:800px){
+.work-item{
 
-body{
+cursor:pointer;
 
-padding:28px;
+margin-bottom:5px;
 
 }
+
+.work-item:hover{
+
+opacity:.5;
+
+}
+
+.content{
+
+flex:1;
+
+}
+
+.image{
+
+width:100%;
+max-width:900px;
+
+}
+
+.image img{
+
+width:100%;
+
+display:block;
+
+}
+
+.controls{
+
+margin:15px 0;
+
+}
+
+.controls button{
+
+background:none;
+border:none;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+
+.description{
+
+max-width:800px;
+line-height:1.4;
+
+}
+
+@media(max-width:900px){
 
 .container{
 
 flex-direction:column;
-gap:50px;
 
 }
 
-.quote{
+.sidebar{
 
-max-width:100%;
+width:100%;
 
 }
 
@@ -119,36 +159,249 @@ max-width:100%;
 
 <div class="container">
 
-<div class="left">
+<div class="sidebar">
 
 <div class="name">
+
 Julie Vanlook
+
 </div>
 
 <div class="info">
+
 visual / olfactory artist<br>
-living in Belgium
-</div>
-
-<div class="nav">
-
-<a href="/works">works</a>
-
-<a href="/geur">geur</a>
-
-<a href="/about">about</a>
+Belgium
 
 </div>
 
+<div class="menu">
+
+<a onclick="toggleWorks()">
+
+works
+
+</a>
+
+<div class="work-list" id="works">
+
+<div
+class="work-item"
+onclick="openProject('left')">
+
+LEFT
+
 </div>
 
-<div class="quote">
+<div
+class="work-item"
+onclick="openProject('memory')">
 
-Her work stems from research into the ways scent engages the body and brings emotions to the surface.
+SMELL MEMORY
+
+</div>
+
+<div
+class="work-item"
+onclick="openProject('pearls')">
+
+PINK PEAR(L)S
 
 </div>
 
 </div>
+
+<a href="/geur">
+
+geur
+
+</a>
+
+<a href="/about">
+
+about
+
+</a>
+
+</div>
+
+</div>
+
+<div class="content">
+
+<div class="image">
+
+<img
+id="projectImage"
+src="left.jpg">
+
+</div>
+
+<div class="controls">
+
+<span id="counter">
+
+1 / 3
+
+</span>
+
+<button onclick="prevImage()">
+
+Previous
+
+</button>
+
+|
+
+<button onclick="nextImage()">
+
+Next
+
+</button>
+
+</div>
+
+<div
+class="description"
+id="description">
+
+Klik links op een work.
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let projects={
+
+left:{
+
+images:[
+"left.jpg",
+"leftcloseup.jpg",
+"IMG_1940.jpg"
+],
+
+title:"LEFT",
+
+text:"Scent sculpture, 2026."
+
+},
+
+memory:{
+
+images:[
+"grandparent.jpg"
+],
+
+title:"SMELL MEMORY",
+
+text:"Scent installation 2025."
+
+},
+
+pearls:{
+
+images:[
+"pinkpearls.jpg"
+],
+
+title:"PINK PEAR(L)S",
+
+text:"Object work 2026."
+
+}
+
+}
+
+let currentProject=null;
+let currentImage=0;
+
+function toggleWorks(){
+
+document
+.getElementById("works")
+.classList
+.toggle("active");
+
+}
+
+function openProject(id){
+
+currentProject=projects[id];
+
+currentImage=0;
+
+render();
+
+}
+
+function render(){
+
+if(!currentProject)return;
+
+document
+.getElementById("projectImage")
+.src=
+currentProject.images[currentImage];
+
+document
+.getElementById("counter")
+.textContent=
+`${currentImage+1} / ${currentProject.images.length}`;
+
+document
+.getElementById("description")
+.innerHTML=`
+
+<b>${currentProject.title}</b>
+
+<br><br>
+
+${currentProject.text}
+
+`;
+
+}
+
+function nextImage(){
+
+if(!currentProject)return;
+
+currentImage++;
+
+if(
+currentImage>=currentProject.images.length
+){
+
+currentImage=0;
+
+}
+
+render();
+
+}
+
+function prevImage(){
+
+if(!currentProject)return;
+
+currentImage--;
+
+if(currentImage<0){
+
+currentImage=
+currentProject.images.length-1;
+
+}
+
+render();
+
+}
+
+</script>
 
 </body>
 </html>
