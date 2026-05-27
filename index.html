@@ -12,7 +12,6 @@
 name="description"
 content="Julie Vanlook — visual and olfactory artist">
 
-<!-- FONT -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -58,13 +57,12 @@ flex-shrink:0;
 
 .name{
 
-font-family:'Times New Roman', serif;
 font-size:14px;
 line-height:0.9;
 
 cursor:pointer;
 
-
+margin-bottom:20px;
 
 }
 
@@ -264,16 +262,18 @@ WORKS
 <div
 id="works"
 class="dropdown">
+
 <div
 class="item"
-onclick="openProject('CEST TOI QUI PARS')">
+onclick="openProject('cesttoi')">
 
 C'EST TOI QUI PARS
 
 </div>
+
 <div
 class="item"
-onclick="openProject('left')">
+onclick="openProject('pearls')">
 
 PINK PEAR(L)S
 
@@ -281,7 +281,7 @@ PINK PEAR(L)S
 
 <div
 class="item"
-onclick="openProject('memory')">
+onclick="openProject('left')">
 
 LEFT
 
@@ -289,21 +289,23 @@ LEFT
 
 <div
 class="item"
-onclick="openProject('pearls')">
+onclick="openProject('memory')">
 
 GRANDPARENTS
 
 </div>
-  <div
+
+<div
 class="item"
-onclick="openProject('left')">
+onclick="openProject('apreslapluie')">
 
 APRÈS LA PLUIE
 
 </div>
+
 <div
 class="item"
-onclick="openProject('pearls')">
+onclick="openProject('mange')">
 
 MANGÉ III
 
@@ -373,7 +375,7 @@ class="description">
 
 const projects = {
 
-CEST TOI QUI PARS: {
+cesttoi: {
 
 images: [
 "left.jpg",
@@ -385,13 +387,51 @@ title: "C'est toi qui pars, 2026",
 
 text: `
 
-immaterial performance - olfactory installation <br>
+immaterial performance — olfactory installation
+
+<br><br>
+
 06° 00’, variable dimensions
 
 <br><br>
-A dispersed immaterial installation unfolding across eight rooms at Hoste-House Hasselt, centred on the oscillation between presence and absence. The work intermittently diffuses the artist’s own body scent, rendering it as a volatile spatial residue. Neither visible nor graspable, it emerges, disperses, and withdraws. What remains is the fleeting trace of something already in disappearance. 
-<br>
+
+A dispersed immaterial installation unfolding across eight rooms at Hoste-House Hasselt, centred on the oscillation between presence and absence.
+
+<br><br>
+
+The work intermittently diffuses the artist’s own body scent, rendering it as a volatile spatial residue.
+
+<br><br>
+
+Neither visible nor graspable, it emerges, disperses, and withdraws.
+
+<br><br>
+
+What remains is the fleeting trace of something already in disappearance.
+
+<br><br>
+
 Supported by Noctua
+
+`
+
+},
+
+left: {
+
+images: [
+"left.jpg"
+],
+
+title: "LEFT",
+
+text: `
+
+Visual work
+
+<br><br>
+
+2026
 
 `
 
@@ -403,7 +443,7 @@ images: [
 "grandparent.jpg"
 ],
 
-title: "SMELL MEMORY",
+title: "GRANDPARENTS",
 
 text: `
 
@@ -445,6 +485,38 @@ Object work
 
 },
 
+apreslapluie: {
+
+images: [
+"apreslapluie.jpg"
+],
+
+title: "APRÈS LA PLUIE",
+
+text: `
+
+Work description here.
+
+`
+
+},
+
+mange: {
+
+images: [
+"mange.jpg"
+],
+
+title: "MANGÉ III",
+
+text: `
+
+Work description here.
+
+`
+
+},
+
 gav03: {
 
 images: [
@@ -473,7 +545,7 @@ skin
 let currentProject = null
 let currentImage = 0
 
-/* MENU OPEN/CLOSE */
+/* MENU */
 
 function toggleMenu(id){
 
@@ -490,13 +562,20 @@ function openProject(id){
 
 currentProject = projects[id]
 
+if(!currentProject){
+
+console.log("Project not found:", id)
+return
+
+}
+
 currentImage = 0
 
 render()
 
 }
 
-/* RENDER PROJECT */
+/* RENDER */
 
 function render(){
 
@@ -508,7 +587,8 @@ document
 
 document
 .getElementById("projectImage")
-.src = currentProject.images[currentImage]
+.src =
+currentProject.images[currentImage]
 
 document
 .getElementById("description")
@@ -562,7 +642,7 @@ document
 
 }
 
-/* NEXT IMAGE */
+/* NEXT */
 
 function nextImage(){
 
@@ -580,7 +660,7 @@ render()
 
 }
 
-/* PREVIOUS IMAGE */
+/* PREVIOUS */
 
 function prevImage(){
 
