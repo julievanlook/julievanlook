@@ -157,8 +157,14 @@ display:block;
 
 .controls{
 
-margin-top:14px;
-margin-bottom:20px;
+margin-top:20px;
+margin-bottom:35px;
+
+font-size:14px;
+
+display:flex;
+align-items:center;
+gap:12px;
 
 }
 
@@ -169,8 +175,10 @@ border:none;
 
 cursor:pointer;
 
-font-size:15px;
+font-size:14px;
 font-family:inherit;
+
+padding:0;
 
 }
 
@@ -218,7 +226,7 @@ width:100%;
 
 .name{
 
-font-size:56px;
+font-size:40px;
 
 }
 
@@ -615,17 +623,15 @@ document
 `
 
 ${currentImage + 1}
-/
+of
 ${currentProject.images.length}
 
 <button onclick="prevImage()">
-Previous
+&lt;
 </button>
 
-|
-
 <button onclick="nextImage()">
-Next
+&gt;
 </button>
 
 `
