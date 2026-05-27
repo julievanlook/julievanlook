@@ -12,7 +12,7 @@
 name="description"
 content="Julie Vanlook — visual and olfactory artist">
 
-<!-- SCRIPT FONT -->
+<!-- FONT -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -29,7 +29,6 @@ box-sizing:border-box;
 body{
 
 font-family:'Times New Roman', serif;
-
 background:white;
 color:black;
 
@@ -58,16 +57,15 @@ flex-shrink:0;
 /* NAME */
 
 .name{
+
 font-family:'Times New Roman', serif;
+font-size:72px;
+line-height:0.9;
 
-background:white;
-color:black;
+cursor:pointer;
 
-padding:25px;
+margin-bottom:20px;
 
-font-size:16px;
-line-height:1.35;
-font-weight:300;
 }
 
 /* INFO */
@@ -84,7 +82,6 @@ margin-bottom:28px;
 
 display:flex;
 flex-direction:column;
-
 gap:8px;
 
 }
@@ -92,13 +89,11 @@ gap:8px;
 .menu a{
 
 text-decoration:none;
-
 color:black;
 
 cursor:pointer;
 
 display:block;
-
 width:fit-content;
 
 }
@@ -114,7 +109,6 @@ opacity:.45;
 display:none;
 
 margin-bottom:12px;
-
 padding-left:10px;
 
 }
@@ -130,7 +124,6 @@ display:block;
 cursor:pointer;
 
 margin-bottom:4px;
-
 width:fit-content;
 
 }
@@ -146,7 +139,6 @@ opacity:.45;
 .content{
 
 flex:1;
-
 max-width:950px;
 
 }
@@ -154,7 +146,6 @@ max-width:950px;
 .image{
 
 display:none;
-
 width:100%;
 
 }
@@ -162,7 +153,6 @@ width:100%;
 .image img{
 
 width:100%;
-
 display:block;
 
 }
@@ -177,13 +167,11 @@ margin-bottom:20px;
 button{
 
 background:none;
-
 border:none;
 
 cursor:pointer;
 
 font-size:15px;
-
 font-family:inherit;
 
 }
@@ -197,7 +185,6 @@ opacity:.45;
 .description{
 
 max-width:800px;
-
 line-height:1.5;
 
 }
@@ -205,7 +192,6 @@ line-height:1.5;
 .title{
 
 font-weight:bold;
-
 margin-bottom:10px;
 
 }
@@ -215,19 +201,27 @@ margin-bottom:10px;
 @media(max-width:900px){
 
 .container{
+
 flex-direction:column;
+
 }
 
 .sidebar{
+
 width:100%;
+
 }
 
 .content{
+
 width:100%;
+
 }
 
 .name{
+
 font-size:56px;
+
 }
 
 }
@@ -239,6 +233,8 @@ font-size:56px;
 <body>
 
 <div class="container">
+
+<!-- SIDEBAR -->
 
 <div class="sidebar">
 
@@ -258,6 +254,8 @@ based in Brussels
 </div>
 
 <div class="menu">
+
+<!-- WORKS -->
 
 <a onclick="toggleMenu('works')">
 works
@@ -293,6 +291,8 @@ Pink Pear(l)s
 
 </div>
 
+<!-- SCENTS -->
+
 <a onclick="toggleMenu('scents')">
 scents
 </a>
@@ -303,13 +303,15 @@ class="dropdown">
 
 <div
 class="item"
-onclick="openProject('g.AV.03')">
+onclick="openProject('gav03')">
 
 g.AV.03
 
 </div>
 
 </div>
+
+<!-- ABOUT -->
 
 <a onclick="showAbout()">
 about
@@ -318,6 +320,8 @@ about
 </div>
 
 </div>
+
+<!-- CONTENT -->
 
 <div class="content">
 
@@ -347,19 +351,19 @@ class="description">
 
 <script>
 
-const projects={
+const projects = {
 
-left:{
+left: {
 
-images:[
+images: [
 "left.jpg",
 "leftcloseup.jpg",
 "IMG_1940.jpg"
 ],
 
-title:"LEFT",
+title: "LEFT",
 
-text:`
+text: `
 
 Scent sculpture, 2026
 
@@ -375,15 +379,15 @@ Research into memory and scent.
 
 },
 
-memory:{
+memory: {
 
-images:[
+images: [
 "grandparent.jpg"
 ],
 
-title:"SMELL MEMORY",
+title: "SMELL MEMORY",
 
-text:`
+text: `
 
 Scent installation
 
@@ -399,15 +403,15 @@ Objects and smell composition.
 
 },
 
-pearls:{
+pearls: {
 
-images:[
+images: [
 "pinkpearls.jpg"
 ],
 
-title:"PINK PEAR(L)S",
+title: "PINK PEAR(L)S",
 
-text:`
+text: `
 
 Object work
 
@@ -423,10 +427,15 @@ Object work
 
 },
 
-gav03:{
+gav03: {
 
-title:"g.AV.03",
-text:`
+images: [
+"gav03.jpg"
+],
+
+title: "g.AV.03",
+
+text: `
 
 musk, peppermint, tobacco, leather
 
@@ -437,13 +446,16 @@ holding smoke,
 sugar,
 skin
 
+`
 
 }
 
 }
 
-let currentProject=null
-let currentImage=0
+let currentProject = null
+let currentImage = 0
+
+/* MENU OPEN/CLOSE */
 
 function toggleMenu(id){
 
@@ -454,31 +466,35 @@ document
 
 }
 
+/* OPEN PROJECT */
+
 function openProject(id){
 
-currentProject=projects[id]
+currentProject = projects[id]
 
-currentImage=0
+currentImage = 0
 
 render()
 
 }
 
+/* RENDER PROJECT */
+
 function render(){
 
-if(!currentProject)return
+if(!currentProject) return
 
 document
 .getElementById("imageContainer")
-.style.display="block"
+.style.display = "block"
 
 document
 .getElementById("projectImage")
-.src=currentProject.images[currentImage]
+.src = currentProject.images[currentImage]
 
 document
 .getElementById("description")
-.innerHTML=
+.innerHTML =
 
 `
 
@@ -492,16 +508,16 @@ ${currentProject.text}
 
 `
 
-if(currentProject.images.length>1){
+if(currentProject.images.length > 1){
 
 document
 .getElementById("controls")
-.innerHTML=
+.innerHTML =
 
 `
 
-${currentImage+1}
- /
+${currentImage + 1}
+/
 ${currentProject.images.length}
 
 <button onclick="prevImage()">
@@ -522,38 +538,42 @@ else{
 
 document
 .getElementById("controls")
-.innerHTML=""
+.innerHTML = ""
 
 }
 
 }
+
+/* NEXT IMAGE */
 
 function nextImage(){
 
-if(!currentProject)return
+if(!currentProject) return
 
 currentImage++
 
-if(currentImage>=currentProject.images.length){
+if(currentImage >= currentProject.images.length){
 
-currentImage=0
+currentImage = 0
 
 }
 
 render()
 
 }
+
+/* PREVIOUS IMAGE */
 
 function prevImage(){
 
-if(!currentProject)return
+if(!currentProject) return
 
 currentImage--
 
-if(currentImage<0){
+if(currentImage < 0){
 
-currentImage=
-currentProject.images.length-1
+currentImage =
+currentProject.images.length - 1
 
 }
 
@@ -561,21 +581,23 @@ render()
 
 }
 
+/* ABOUT */
+
 function showAbout(){
 
-currentProject=null
+currentProject = null
 
 document
 .getElementById("imageContainer")
-.style.display="none"
+.style.display = "none"
 
 document
 .getElementById("controls")
-.innerHTML=""
+.innerHTML = ""
 
 document
 .getElementById("description")
-.innerHTML=
+.innerHTML =
 
 `
 
@@ -598,23 +620,27 @@ vanlook.julie@gmail.com
 
 }
 
+/* HOME */
+
 function home(){
 
-currentProject=null
+currentProject = null
 
 document
 .getElementById("imageContainer")
-.style.display="none"
+.style.display = "none"
 
 document
 .getElementById("controls")
-.innerHTML=""
+.innerHTML = ""
 
 document
 .getElementById("description")
-.innerHTML=""
+.innerHTML = ""
 
 }
+
+/* START */
 
 home()
 
