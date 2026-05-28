@@ -341,7 +341,7 @@ g.AV.03
 
 <div
 class="item"
-onclick="openProject('gm04')">
+onclick="openProject('gbl04')">
 
 g.BL.04
 
@@ -349,7 +349,7 @@ g.BL.04
 
 <div
 class="item"
-onclick="openProject('gMB03')">
+onclick="openProject('gmb03')">
 
 g.MB.03
 
@@ -357,7 +357,7 @@ g.MB.03
 
 <div
 class="item"
-onclick="openProject('gNA07')">
+onclick="openProject('gna07')">
 
 g.NA.07
 
@@ -365,7 +365,7 @@ g.NA.07
 
 <div
 class="item"
-onclick="openProject('gOH02')">
+onclick="openProject('goh02')">
 
 g.OH.02
 
@@ -373,18 +373,20 @@ g.OH.02
 
 <div
 class="item"
-onclick="openProject('g.SLF.05')">
+onclick="openProject('gslf05')">
 
-g.SLF.05  
+g.SLF.05
 
 </div>
+
 <div
 class="item"
-onclick="openProject('gWO04')">
+onclick="openProject('gwo04')">
 
 g.WO.04
 
 </div>
+
 </div>
 
 <!-- ABOUT -->
@@ -442,29 +444,9 @@ text: `
 
 immaterial performance — olfactory installation
 
-<br>
+<br><br>
 
 06° 00’, variable dimensions
-
-<br><br>
-
-A dispersed immaterial installation unfolding across eight rooms at Hoste-House Hasselt, centred on the oscillation between presence and absence.
-
-<br><br>
-
-The work intermittently diffuses the artist’s own body scent, rendering it as a volatile spatial residue.
-
-<br><br>
-
-Neither visible nor graspable, it emerges, disperses, and withdraws.
-
-<br><br>
-
-What remains is the fleeting trace of something already in disappearance.
-
-<br><br>
-
-Supported by Noctua
 
 `
 
@@ -480,15 +462,7 @@ title: "PINK PEAR(L)S, 2026",
 
 text: `
 
-scent-in-space installation, composed scent g.PP.10
-
-<br>
-
-variable dimensions
-
-<br><br>
-
-Presented during Fun Fun, a collaborative exhibition with Johanna Bulens at ZSenne Artlab Brussels.
+scent-in-space installation
 
 `
 
@@ -506,10 +480,6 @@ text: `
 
 Visual work
 
-<br><br>
-
-2026
-
 `
 
 },
@@ -523,14 +493,6 @@ images: [
 title: "GRANDPARENTS",
 
 text: `
-
-Scent installation
-
-<br><br>
-
-2025
-
-<br><br>
 
 Objects and smell composition.
 
@@ -550,10 +512,6 @@ text: `
 
 rain-soaked soil, wet stone, softened air
 
-<br><br>
-
-a scent lingering after the storm
-
 `
 
 },
@@ -570,15 +528,17 @@ text: `
 
 fruit skin, saliva, warm wood
 
-<br><br>
-
-a trace of consumption
-
 `
 
 },
 
+/* SCENTS */
+
 gav03: {
+
+images: [
+"gav03.jpg"
+],
 
 title: "g.AV.03",
 
@@ -587,117 +547,128 @@ text: `
 musk, peppermint, tobacco, leather
 
 <br><br>
-    a closed space<br>
-    holding<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;smoke<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;sugar<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;skin<br>
-     <br>
+
+a closed space holding smoke, sugar, skin
 
 `
 
 },
 
-ambre08: {
+gbl04: {
 
 images: [
-"ambre08.jpg"
+"gbl04.jpg"
 ],
 
-title: "g.AM.08",
+title: "g.BL.04",
 
 text: `
 
-amber, iris root, warm dust
+salt, wet linen, bergamot
 
 <br><br>
 
-a fading textile
-pressed against skin
+a pale blue surface after rain
 
 `
 
 },
 
-pluie12: {
+gmb03: {
 
 images: [
-"pluie12.jpg"
+"gmb03.jpg"
 ],
 
-title: "g.PL.12",
+title: "g.MB.03",
 
 text: `
 
-rainwater, concrete, wet leaves
+milk, paper, white musk
 
 <br><br>
 
-the scent of pavement
-after summer heat
+warmth trapped in fabric folds
 
 `
 
 },
 
-cendre21: {
+gna07: {
 
 images: [
-"cendre21.jpg"
+"gna07.jpg"
 ],
 
-title: "g.CE.21",
+title: "g.NA.07",
 
 text: `
 
-ash, cedarwood, burnt sugar
+metal, eucalyptus, cold stone
 
 <br><br>
 
-soft smoke
-lingering in curtains
+night air entering an empty room
 
 `
 
 },
 
-sucre05: {
+goh02: {
 
 images: [
-"sucre05.jpg"
+"goh02.jpg"
 ],
 
-title: "g.SU.05",
+title: "g.OH.02",
 
 text: `
 
-milk, vanilla skin, cold metal
+orange peel, cedar, smoke
 
 <br><br>
 
-sweetness held
-inside an empty room
+a hand opening an old wooden box
 
 `
 
 },
 
-nuit14: {
+gslf05: {
 
 images: [
-"nuit14.jpg"
+"gslf05.jpg"
 ],
 
-title: "g.NU.14",
+title: "g.SLF.05",
 
 text: `
 
-black pepper, leather, night air
+skin, dust, iris root
 
 <br><br>
 
-a corridor
-without beginning or end
+soft light resting on the body
+
+`
+
+},
+
+gwo04: {
+
+images: [
+"gwo04.jpg"
+],
+
+title: "g.WO.04",
+
+text: `
+
+burnt wood, resin, dark honey
+
+<br><br>
+
+the remains of a distant fire
 
 `
 
@@ -744,6 +715,10 @@ function render(){
 
 if(!currentProject) return
 
+/* IMAGE */
+
+if(currentProject.images && currentProject.images.length > 0){
+
 document
 .getElementById("imageContainer")
 .style.display = "block"
@@ -752,6 +727,18 @@ document
 .getElementById("projectImage")
 .src =
 currentProject.images[currentImage]
+
+}
+
+else{
+
+document
+.getElementById("imageContainer")
+.style.display = "none"
+
+}
+
+/* TEXT */
 
 document
 .getElementById("description")
@@ -769,7 +756,12 @@ ${currentProject.text}
 
 `
 
-if(currentProject.images.length > 1){
+/* CONTROLS */
+
+if(
+currentProject.images &&
+currentProject.images.length > 1
+){
 
 document
 .getElementById("controls")
