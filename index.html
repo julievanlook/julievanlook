@@ -15,8 +15,6 @@ content="Julie Vanlook — visual and olfactory artist">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-
 <style>
 
 *{
@@ -53,8 +51,6 @@ flex-shrink:0;
 
 }
 
-/* NAME */
-
 .name{
 
 font-size:14px;
@@ -66,15 +62,11 @@ margin-bottom:20px;
 
 }
 
-/* INFO */
-
 .info{
 
 margin-bottom:28px;
 
 }
-
-/* MENU */
 
 .menu{
 
@@ -131,8 +123,6 @@ width:fit-content;
 opacity:.45;
 
 }
-
-/* CONTENT */
 
 .content{
 
@@ -201,8 +191,6 @@ font-weight:bold;
 margin-bottom:10px;
 
 }
-
-/* MOBILE */
 
 @media(max-width:900px){
 
@@ -431,6 +419,8 @@ class="description">
 
 const projects = {
 
+/* WORKS */
+
 cesttoi: {
 
 images: [
@@ -462,8 +452,21 @@ title: "PINK PEAR(L)S, 2026",
 
 text: `
 
-scent-in-space installation, composed scent g.PP.10 <br> variable dimensions <br><br> Presented during Fun Fun, a collaborative exhibition with Johanna Bulens at ZSenne Artlab Brussels. },
+scent-in-space installation, composed scent g.PP.10
 
+<br><br>
+
+variable dimensions
+
+<br><br>
+
+Presented during Fun Fun,
+a collaborative exhibition with Johanna Bulens
+at ZSenne Artlab Brussels.
+
+`
+
+},
 
 left: {
 
@@ -533,29 +536,23 @@ fruit skin, saliva, warm wood
 
 gav03: {
 
-images: [
-"gav.1.jpg"
-],
-
-title: 
+title: "g.AV.03",
 
 text: `
 
-
+musk, peppermint, tobacco, leather
 
 <br><br>
 
-
+a closed space holding smoke,
+sugar,
+skin
 
 `
 
 },
 
 gbl04: {
-
-images: [
-"gbl04.jpg"
-],
 
 title: "g.BL.04",
 
@@ -573,10 +570,6 @@ a pale blue surface after rain
 
 gmb03: {
 
-images: [
-"gmb03.jpg"
-],
-
 title: "g.MB.03",
 
 text: `
@@ -593,19 +586,15 @@ warmth trapped in fabric folds
 
 gna07: {
 
-images: [
-"gna07.jpg"
-],
-
 title: "g.NA.07",
 
 text: `
 
-
+metal, eucalyptus, cold stone
 
 <br><br>
 
-
+night air entering an empty room
 
 `
 
@@ -613,19 +602,15 @@ text: `
 
 goh02: {
 
-images: [
-"goh02.jpg"
-],
-
 title: "g.OH.02",
 
 text: `
 
-
+orange peel, cedar, smoke
 
 <br><br>
 
-
+a hand opening an old wooden box
 
 `
 
@@ -633,29 +618,21 @@ text: `
 
 gslf05: {
 
-images: [
-"gslf05.jpg"
-],
-
 title: "g.SLF.05",
 
 text: `
 
-
+skin, dust, iris root
 
 <br><br>
 
-...
+soft light resting on the body
 
 `
 
 },
 
 gwo04: {
-
-images: [
-"gwo04.jpg"
-],
 
 title: "g.WO.04",
 
@@ -665,7 +642,7 @@ burnt wood, resin, dark honey
 
 <br><br>
 
-...
+the remains of a distant fire
 
 `
 
@@ -714,7 +691,10 @@ if(!currentProject) return
 
 /* IMAGE */
 
-if(currentProject.images && currentProject.images.length > 0){
+if(
+currentProject.images &&
+currentProject.images.length > 0
+){
 
 document
 .getElementById("imageContainer")
@@ -792,7 +772,7 @@ document
 
 }
 
-/* NEXT */
+/* NEXT IMAGE */
 
 function nextImage(){
 
@@ -810,7 +790,7 @@ render()
 
 }
 
-/* PREVIOUS */
+/* PREVIOUS IMAGE */
 
 function prevImage(){
 
@@ -857,7 +837,8 @@ Visual / olfactory artist based in Brussels.
 
 <br><br>
 
-Loading.
+Her work stems from research into scent,
+memory and embodiment.
 
 <br><br>
 
