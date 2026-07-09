@@ -49,29 +49,36 @@ body {
 }
 
 .container{
-
-display:flex;
-gap:40px;
-
+    display:flex;
+    gap:40px;
+    align-items:flex-start;
 }
 
-.sidebar{
-
-width:280px;
-flex-shrink:0;
-
+.header{
+    display:flex;
+    gap:60px;
+    align-items:flex-start;
+    margin-bottom:25px;
 }
 
 .name{
+    width:260px;
+    flex-shrink:0;
 
-font-size:11px;
-line-height:0.9;
+    font-size:11px;
+    line-height:1.1;
 
-cursor:pointer;
-
-margin-bottom:20px;
-
+    cursor:pointer;
 }
+
+.intro{
+    max-width:700px;
+    line-height:1.35;
+}
+
+
+
+
 
 .info{
 
@@ -205,29 +212,26 @@ margin-bottom:10px;
 
 @media(max-width:900px){
 
-.container{
+    .container{
+        flex-direction:column;
+    }
 
-flex-direction:column;
+    .header{
+        flex-direction:column;
+        gap:15px;
+    }
 
-}
+    .name{
+        width:100%;
+        font-size:28px;
+    }
 
-.sidebar{
-
-width:100%;
-
-}
-
-.content{
-
-width:100%;
-
-}
-
-.name{
-
-font-size:40px;
+    .intro{
+        max-width:100%;
+    }
 
 }
+
 
 }
 
@@ -243,11 +247,15 @@ font-size:40px;
 
 <div class="sidebar">
 
-<div
-class="name"
-onclick="home()">
+<div class="header">
 
-Julie Vanlook
+    <div class="name" onclick="home()">
+        Julie Vanlook
+    </div>
+
+    <div class="intro">
+        xxxx – xxxxx.
+    </div>
 
 </div>
 
