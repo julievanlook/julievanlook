@@ -230,6 +230,23 @@ margin-bottom:10px;
 .separator{
     margin:22px 0;
 }
+ 
+OLFACTIVE ARCHIVE
+
+Archive No.    	g.NA.07
+Date:          	2025
+
+Classification  Immaterial Sculpture
+
+
+Origin        	After Rainfall
+
+Description	Damp soil. Clay.
+Mineral residue.
+Organic matter released after rainfall.
+
+Material 		Olfactory composition ( … … )
+
 
 @media(max-width:900px){
 
@@ -293,7 +310,7 @@ margin-bottom:10px;
 
 
 <!-- SCENTS -->
-<a onclick="toggleMenu('scents')">
+<a onclick="showArchive()">
     Olfactive Archive
 </a>
 
@@ -487,6 +504,24 @@ class="description">
 </div>
 
 <script>
+ const archive = [
+
+{
+number:"001",
+code:"gna07",
+archive:"g.NA.07",
+date:"2025",
+classification:"Immaterial Sculpture",
+origin:"After Rainfall",
+description:`Damp soil. Clay.
+Mineral residue.
+Organic matter released after rainfall.`,
+material:"Olfactory composition (...)"
+},
+
+// meer items...
+
+];
 
 const projects = {
 
@@ -1043,6 +1078,72 @@ document
 document
 .getElementById("description")
 .innerHTML = ""
+
+}
+ function showArchive(){
+
+currentProject=null;
+
+document.getElementById("imageContainer").style.display="none";
+document.getElementById("controls").innerHTML="";
+
+let html="";
+
+archive.forEach(item=>{
+
+html+=`
+
+<div class="archive-item" onclick="openProject('${item.code}')">
+
+<div class="archive-number">
+${item.number}
+</div>
+
+<div class="archive-title">
+OLFACTIVE ARCHIVE
+</div>
+
+<div class="archive-table">
+
+<div class="archive-row">
+<div class="archive-label">Archive No.</div>
+<div class="archive-value">${item.archive}</div>
+</div>
+
+<div class="archive-row">
+<div class="archive-label">Date</div>
+<div class="archive-value">${item.date}</div>
+</div>
+
+<div class="archive-row">
+<div class="archive-label">Classification</div>
+<div class="archive-value">${item.classification}</div>
+</div>
+
+<div class="archive-row">
+<div class="archive-label">Origin</div>
+<div class="archive-value">${item.origin}</div>
+</div>
+
+<div class="archive-row">
+<div class="archive-label">Description</div>
+<div class="archive-value">${item.description}</div>
+</div>
+
+<div class="archive-row">
+<div class="archive-label">Material</div>
+<div class="archive-value">${item.material}</div>
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+document.getElementById("description").innerHTML=html;
 
 }
 
