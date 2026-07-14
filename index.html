@@ -803,136 +803,7 @@ text: `
 
 },
 
-/* SCENTS */
 
-gav03: {
-
-images: [
-""
-],
-
-title: "",
-
-text: `
-
-
-
-<br><br>
-
-
-
-`
-
-},
-
-gbl04: {
-images: [
-""
-],
-title: "",
-
-text: `
-
-
-
-<br><br>
-
-
-
-`
-
-},
-
-gmb03: {
-images: [
-""
-],
-title: "",
-
-text: `
-
-
-
-<br><br>
-
-
-
-`
-
-},
-
-gna07: {
- images: [
-""
-],
-
-title: "",
-
-text: `
-
-
-
-<br><br>
-
-
-
-`
-
-},
-
-goh02: {
-  images: [
-""
-],
-
-title: "",
-
-text: `
-
-
-
-<br><br>
-
-
-
-`
-
-},
-
-gslf05: {
-
-title: "",
-
-text: `
-
-
-
-<br><br>
-
-
-
-`
-
-},
-
-gwo04: {
-  images: [
-""
-],
-
-title: "",
-
-text: `
-
-
-
-<br><br>
-
-
-
-`
-
-}
 
 }
 
@@ -1256,7 +1127,7 @@ currentProject=null;
 document.getElementById("imageContainer").style.display="none";
 document.getElementById("controls").innerHTML="";
 
-let html="";
+let html = '<div class="archive-grid">';
 
 archive.forEach(item=>{
 
@@ -1310,7 +1181,7 @@ OLFACTIVE ARCHIVE
 
 `;
 
-});
+html += "</div>";
 
 document.getElementById("description").innerHTML=html;
 
