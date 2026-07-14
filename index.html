@@ -231,21 +231,32 @@ margin-bottom:10px;
     margin:22px 0;
 }
  
+.archive-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:50px 30px;
+    width:100%;
+}
+
 .archive-item{
-    max-width:560px;
-    margin-bottom:80px;
+    cursor:pointer;
+}
+
+.archive-item:hover{
+    opacity:.55;
 }
 
 .archive-number{
-    font-size:110px;
-    line-height:.85;
-    letter-spacing:-5px;
-    margin-bottom:10px;
+    font-size:96px;
+    line-height:.82;
+    letter-spacing:-4px;
+    margin-bottom:8px;
 }
 
 .archive-title{
-    margin-bottom:8px;
+    margin-bottom:10px;
     text-transform:uppercase;
+    letter-spacing:1px;
 }
 
 .archive-table{
@@ -255,17 +266,40 @@ margin-bottom:10px;
 
 .archive-row{
     display:grid;
-    grid-template-columns:190px 1fr;
+    grid-template-columns:130px 1fr;
     border-bottom:1px solid #000;
     padding:4px 0;
+    align-items:start;
 }
 
 .archive-label{
-    font-weight:400;
+    white-space:nowrap;
 }
 
 .archive-value{
     white-space:pre-line;
+}
+ @media(max-width:1100px){
+
+.archive-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+ @media(max-width:700px){
+
+.archive-grid{
+grid-template-columns:1fr;
+}
+
+.archive-number{
+font-size:72px;
+}
+
+.archive-row{
+grid-template-columns:110px 1fr;
+}
+
 }
 
 @media(max-width:900px){
@@ -539,7 +573,122 @@ Organic matter released after rainfall.`,
 material:"Olfactory composition (...)"
 },
 
-// meer items...
+{
+number:"002",
+code:"gna07",
+archive:"g.NA.07",
+date:"2025",
+classification:"Immaterial Sculpture",
+origin:"After Rainfall",
+description:`Damp soil. Clay.
+Mineral residue.
+Organic matter released after rainfall.`,
+material:"Olfactory composition (...)"
+},
+
+{
+number:"003",
+code:"gna07",
+archive:"g.NA.07",
+date:"2025",
+classification:"Immaterial Sculpture",
+origin:"After Rainfall",
+description:`Damp soil. Clay.
+Mineral residue.
+Organic matter released after rainfall.`,
+material:"Olfactory composition (...)"
+},
+
+{
+number:"003",
+code:"gna07",
+archive:"g.NA.07",
+date:"2025",
+classification:"Immaterial Sculpture",
+origin:"After Rainfall",
+description:`Damp soil. Clay.
+Mineral residue.
+Organic matter released after rainfall.`,
+material:"Olfactory composition (...)"
+},
+
+{
+number:"004",
+code:"gna07",
+archive:"g.NA.07",
+date:"2025",
+classification:"Immaterial Sculpture",
+origin:"After Rainfall",
+description:`Damp soil. Clay.
+Mineral residue.
+Organic matter released after rainfall.`,
+material:"Olfactory composition (...)"
+},
+
+{
+number:"005",
+code:"gna07",
+archive:"g.NA.07",
+date:"2025",
+classification:"Immaterial Sculpture",
+origin:"After Rainfall",
+description:`Damp soil. Clay.
+Mineral residue.
+Organic matter released after rainfall.`,
+material:"Olfactory composition (...)"
+},
+
+{
+number:"006",
+code:"gna07",
+archive:"g.NA.07",
+date:"2025",
+classification:"Immaterial Sculpture",
+origin:"After Rainfall",
+description:`Damp soil. Clay.
+Mineral residue.
+Organic matter released after rainfall.`,
+material:"Olfactory composition (...)"
+},
+
+ {
+number:"007",
+code:"gna07",
+archive:"g.NA.07",
+date:"2025",
+classification:"Immaterial Sculpture",
+origin:"After Rainfall",
+description:`Damp soil. Clay.
+Mineral residue.
+Organic matter released after rainfall.`,
+material:"Olfactory composition (...)"
+},
+
+{
+number:"008",
+code:"gna07",
+archive:"g.NA.07",
+date:"2025",
+classification:"Immaterial Sculpture",
+origin:"After Rainfall",
+description:`Damp soil. Clay.
+Mineral residue.
+Organic matter released after rainfall.`,
+material:"Olfactory composition (...)"
+},
+
+{
+number:"009",
+code:"gna07",
+archive:"g.NA.07",
+date:"2025",
+classification:"Immaterial Sculpture",
+origin:"After Rainfall",
+description:`Damp soil. Clay.
+Mineral residue.
+Organic matter released after rainfall.`,
+material:"Olfactory composition (...)"
+},
 
 ];
 
