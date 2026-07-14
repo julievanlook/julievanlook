@@ -291,22 +291,19 @@ grid-template-columns:repeat(2,1fr);
  @media(max-width:700px){
 
 .archive-grid{
+    grid-template-columns:1fr;
     gap:35px;
     margin-top:25px;
-}
+ 
+   .archive-number{
+        font-size:14px;
+        letter-spacing:2px;
+    }
 
-.archive-row{
-    font-size:11px;
-    padding:5px 0;
-}
+    .archive-row{
+        grid-template-columns:100px 1fr;
+    }
 
-.archive-label{
-    width:100px;
-}
-
-.archive-value{
-    line-height:1.4;
-}
 
 }
 
