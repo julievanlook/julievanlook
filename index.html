@@ -579,7 +579,7 @@ code:"gpp10",
 archive:"g.PP.10",
 date:"2026",
 classification:"Immaterial Sculpture",
-origin: "Childhood Fantasy"
+origin: "Childhood Fantasy",
 description:`A constructed sweetness suspended between nostalgia and fantasy.`,
 material:"Ethylene Brassylate, ISO E Super, Ebanol, Phenethyl Phenylacetate, Pear Accord, Bubble Gum Accord, Dark Ambergris, Patchouli"
 },
@@ -1063,6 +1063,22 @@ Conversation with Emma Vanpaemel<br>
 </div>
 
 `;
+}
+ function showPublications(){
+
+currentProject = null;
+
+document.getElementById("imageContainer").style.display="none";
+document.getElementById("controls").innerHTML="";
+
+document.getElementById("description").innerHTML = `
+<div class="about">
+<p>
+Publications
+</p>
+</div>
+`;
+
 }
 
 /* HOME */
