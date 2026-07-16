@@ -368,6 +368,7 @@ grid-template-columns:repeat(2,1fr);
 
 
 <!-- SCENTS -->
+ 
 <a onclick="showArchive()">
     Olfactive Archive
 </a>
@@ -452,7 +453,7 @@ g.WO.04
 
 <!-- WORKS -->
 
-<a onclick="toggleMenu('works')">
+ <a onclick="toggleMenu('works')">
 Works
 </a>
 
@@ -788,6 +789,8 @@ document
 
 function openProject(id){
 
+hideIntro();
+
 currentProject = projects[id]
 
 if(!currentProject){
@@ -931,8 +934,16 @@ render()
 
 /* ABOUT */
 
+ function hideIntro() {
+    document.getElementById("intro").style.display = "none";
+}
+
+function showIntro() {
+    document.getElementById("intro").style.display = "block";
+}
 function showAbout(){
 
+    hideIntro();
     currentProject = null;
 
     document.getElementById("imageContainer").style.display = "none";
@@ -1065,7 +1076,8 @@ Conversation with Emma Vanpaemel<br>
 }
  function showPublications(){
 
-currentProject = null;
+ hideIntro();
+  currentProject = null;
 
 document.getElementById("imageContainer").style.display="none";
 document.getElementById("controls").innerHTML="";
@@ -1084,23 +1096,18 @@ document.getElementById("description").innerHTML = `
 
 function home(){
 
-currentProject = null
+    showIntro();
 
-document
-.getElementById("imageContainer")
-.style.display = "none"
+    currentProject = null;
 
-document
-.getElementById("controls")
-.innerHTML = ""
-
-document
-.getElementById("description")
-.innerHTML = ""
-
+    document.getElementById("imageContainer").style.display = "none";
+    document.getElementById("controls").innerHTML = "";
+    document.getElementById("description").innerHTML = "";
 }
+ 
  function showArchive(){
 
+hideIntro();
 currentProject=null;
 
 document.getElementById("imageContainer").style.display="none";
