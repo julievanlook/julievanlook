@@ -522,9 +522,23 @@ SCENT MEMORY
 </div>
 <!-- PUBLICATIONS -->
 
-<a onclick="showPublications()">
+<a onclick="toggleMenu('publications')">
 Publications
 </a>
+
+<div
+id="publications"
+class="dropdown">
+
+<div
+class="item"
+onclick="openProject('0520')">
+
+05'20"
+
+</div>
+
+</div>
 
 <!-- ABOUT -->
 
@@ -1090,6 +1104,30 @@ document.getElementById("description").innerHTML = `
 </p>
 </div>
 `;
+
+  0520: {
+
+images: [
+
+],
+
+title: "05'20\"",
+
+text: `
+
+Publication details here.
+
+<br><br>
+
+Date: 2025
+
+<br><br>
+
+Description of the publication.
+
+`
+
+},
 
 }
 
