@@ -1089,45 +1089,39 @@ Conversation with Emma Vanpaemel<br>
 
 `;
 }
- function showPublications(){
+function showPublication(id){
 
- hideIntro();
-  currentProject = null;
+hideIntro();
+
+currentProject = null;
 
 document.getElementById("imageContainer").style.display="none";
 document.getElementById("controls").innerHTML="";
 
+if(id === "0520"){
+
 document.getElementById("description").innerHTML = `
+
 <div class="about">
+
 <p>
-...
+<b>05'20"</b>
 </p>
+
+<p>
+Publication<br>
+2025
+</p>
+
+<p>
+Description of the publication.
+</p>
+
 </div>
+
 `;
 
-  0520: {
-
-images: [
-
-],
-
-title: "05'20\"",
-
-text: `
-
-Publication details here.
-
-<br><br>
-
-Date: 2025
-
-<br><br>
-
-Description of the publication.
-
-`
-
-},
+}
 
 }
 
