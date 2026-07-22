@@ -574,6 +574,8 @@ origin: 'J. Vanlook',
 description:`Something of a person remains.
 Held in an invisible state.`,
 material:"Personal trace extraction. Five-month maceration process."
+createdFor:"C'est toi qui pars",
+presentedAt:"The Never Ending, Hoste-Huis Hasselt (2026)"
 },
 {
 number:"g.PP.10",
@@ -1176,6 +1178,16 @@ ${item.number}
 <div class="archive-row">
 <div class="archive-label">Material</div>
 <div class="archive-value">${item.material}</div>
+</div>
+
+<div class="archive-row">
+    <div class="archive-label">Created for</div>
+    <div class="archive-value">${item.createdFor || ""}</div>
+</div>
+
+<div class="archive-row">
+    <div class="archive-label">Presented at</div>
+    <div class="archive-value">${item.presentedAt || ""}</div>
 </div>
 
 
