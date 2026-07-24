@@ -164,16 +164,10 @@ width:100%;
 }
 
 .controls{
-
-margin-top:20px;
-margin-bottom:35px;
-
-font-size:14px;
-
-display:flex;
-align-items:center;
-gap:12px;
-
+    margin-top:8px;
+    margin-bottom:12px;
+    font-size:11px;
+    gap:6px;
 }
 
 button{
@@ -197,17 +191,27 @@ opacity:.45;
 }
 
 .description{
-
-   width:100%;
-    max-width:none;
-    line-height:1.5;
+    max-width:700px;
+    margin-top:0px;
+    line-height:1.4;
 }
 
 .title{
+    font-weight:700;
+    text-transform:uppercase;
+    margin-bottom:3px;
+}
+ .subtitle{
+    margin-bottom:18px;
+    line-height:1.35;
+}
 
-font-weight:bold;
-margin-bottom:10px;
-
+.description p{
+    margin:0 0 14px 0;
+}
+ .description .credits{
+    margin-top:22px;
+    line-height:1.35;
 }
  .about{
     max-width:760px;
@@ -682,22 +686,24 @@ cesttoi: {
 images: [
 "eetkamer1_jv.jpg"
 ],
+ <div class="title">
+    C'EST TOI QUI PARS
+</div>
 
-title: "C'EST TOI QUI PARS",
-
-subtitle: "Olfactive installation, custom-built ventilation system, body tincture, 2026",
-
-text: `
-
-<p>
-What remains of a person when their presence can no longer be seen? This question formed the starting point for <em>C'est toi qui pars</em>, an olfactory installation exploring scent as a fragile trace of embodiment and memory. Through a network of custom-built diffusers distributed across nine rooms, a personal body tincture appears and disappears over time, creating temporary moments of proximity.
-</p>
-
-<br>
+<div class="subtitle">
+    Olfactive installation, custom-built ventilation system,
+    body tincture, 2026
+</div>
 
 <p>
-The work unfolds as a negotiation between presence and absence, between what is held and what is released. Scent becomes a carrier of intimacy, not as a representation of someone, but as an ephemeral encounter that exists only through time, space, and perception.
+    What remains of a person when their presence can no longer be seen?
+    This question formed the starting point...
 </p>
+
+<p>
+    The work unfolds as a negotiation between presence and absence...
+</p>
+
 
 `
 
