@@ -141,6 +141,9 @@ width:fit-content;
 opacity:.45;
 
 }
+ .project-content{
+    max-width:900px;
+}
 
 .content{
     flex:1;
@@ -879,21 +882,19 @@ document
 .innerHTML =
 
 `
+<div class="project-content">
 
 <div class="title">
-
 ${currentProject.title}
-
 </div>
 
 <div class="subtitle">
-
 ${currentProject.subtitle || ""}
-
 </div>
 
 ${currentProject.text}
 
+</div>
 `
 
 /* CONTROLS */
