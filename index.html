@@ -199,9 +199,14 @@ opacity:.45;
     line-height:1.4;
 }
 
- .image,
-.description{
+ .image{
     max-width:900px;
+}
+
+.description{
+    max-width:none;
+    width:100%;
+    line-height:1.4;
 }
 
 .title{
@@ -244,11 +249,12 @@ opacity:.45;
 }
  
 .archive-grid{
-    display:grid;
+     display:grid;
     grid-template-columns:repeat(3,1fr);
-    column-gap:100px;
+    column-gap:80px;
     row-gap:60px;
     width:100%;
+    max-width:none;
     margin-top:-20px;
 }
 
