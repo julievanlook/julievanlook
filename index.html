@@ -265,6 +265,25 @@ opacity:.45;
 .archive-item:hover{
     opacity:.55;
 }
+ .archive-hover-image{
+    position:absolute;
+    width:100%;
+    aspect-ratio:1 / 1;
+    object-fit:cover;
+    top:0;
+    left:0;
+    display:none;
+    z-index:10;
+}
+
+.archive-item{
+    cursor:pointer;
+    position:relative;
+}
+
+.archive-item:hover .archive-hover-image{
+    display:block;
+}
 
 .archive-number{
     font-size:14px;
@@ -586,6 +605,7 @@ class="description">
 {
 number:"g.JV.01",
 code:"gJV01",
+image:"g.JV.01.jpg",
 archive:"2650001",
 date:"2026",
 classification:"Immaterial Sculpture",
@@ -1186,14 +1206,16 @@ archive.forEach(item=>{
 
 html+=`
 
-<div class="archive-item" onclick="openProject('${item.code}')">
+<div class="archive-item" 
+onclick="openProject('${item.code}')">
+
+<img 
+class="archive-hover-image"
+src="${item.image}"
+>
 
 <div class="archive-number">
 ${item.number}
-</div>
-
-<div class="archive-title">
-
 </div>
 
 <div class="archive-table">
