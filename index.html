@@ -552,6 +552,12 @@ onclick="openProject('0520')">
 About
 </a>
 
+ <!-- CONTACT -->
+
+<a onclick="showContact()">
+Contact
+</a>
+
 </div>
 
 </div>
@@ -1132,6 +1138,41 @@ Conversation with Emma Vanpaemel<br>
 
 `;
 }
+
+ function showContact(){
+
+    hideIntro();
+    currentProject = null;
+
+    document.getElementById("imageContainer").style.display = "none";
+    document.getElementById("controls").innerHTML = "";
+
+    document.getElementById("description").innerHTML = `
+
+    <div class="about">
+
+    <p><b>Contact</b></p>
+
+    <p>
+    For commissions, exhibitions, collaborations, publications, or other inquiries:
+    </p>
+
+    <p>
+    <a href="mailto:vanlook.julie@gmail.com">
+    vanlook.julie@gmail.com
+    </a><br>
+
+    <a href="https://www.instagram.com/julie.vanlook/" target="_blank">
+    Instagram
+    </a>
+    </p>
+
+    </div>
+
+    `;
+
+}
+ 
 function showPublication(id){
 
 hideIntro();
