@@ -933,7 +933,7 @@ ${currentProject.text}
 
 if(
 currentProject.images &&
-currentProject.images.length > 1
+currentProject.images.length > 0
 ){
 
 document
@@ -956,6 +956,8 @@ previous
 <button onclick="nextImage()">
 next
 </button>
+
+` : ""}
 
 `
 
