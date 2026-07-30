@@ -174,7 +174,17 @@ font-style:italic;
     margin-top:8px;
     margin-bottom:12px;
     font-size:11px;
-    gap:6px;
+     display:flex;
+    align-items:center;
+    gap:0;
+}
+ .control-divider{
+    display:inline-block;
+    width:1px;
+    height:12px;
+    background:black;
+    margin:0 8px;
+    vertical-align:middle;
 }
 
 button{
@@ -212,7 +222,7 @@ opacity:.45;
 }
 
 .title{
-    font-weight:520;
+    font-weight:510;
     text-transform:uppercase;
     margin-bottom:3px;
 }
@@ -937,11 +947,13 @@ of
 ${currentProject.images.length}
 
 <button onclick="prevImage()">
-&lt;
+previous
 </button>
 
+<span class="control-divider"></span>
+
 <button onclick="nextImage()">
-&gt;
+next
 </button>
 
 `
