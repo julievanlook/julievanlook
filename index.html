@@ -176,33 +176,30 @@ font-style:italic;
     font-size:11px;
      display:flex;
     align-items:center;
-    gap:0;
+    letter-spacing:1px;
+}
+ .image-count{
+    margin-right:20px;
 }
  .control-divider{
     display:inline-block;
     width:1px;
     height:7px;
     background:black;
-     margin:8 8px;
     vertical-align:middle;
+   margin:0 8px;
 }
- .control-space{
-    display:inline-block;
-    width:20px;
-}
+
 
 button{
 
-background:none;
-border:none;
-
-cursor:pointer;
-
-font-size:11px;
-font-family:inherit;
-
-padding:0;
-letter-spacing:1px;
+   background:none;
+    border:none;
+    cursor:pointer;
+    font-size:11px;
+    font-family:inherit;
+    padding:0;
+    letter-spacing:1px;
 
 }
 
@@ -946,10 +943,9 @@ document
 .innerHTML =
 
 `
-
-${currentImage + 1}
-of
-${currentProject.images.length}
+<span class="image-count">
+${currentImage + 1} of ${currentProject.images.length}
+</span>
 
 <button onclick="prevImage()">
 previous
