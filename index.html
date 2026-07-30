@@ -933,7 +933,7 @@ ${currentProject.text}
 
 if(
 currentProject.images &&
-currentProject.images.length > 0
+currentProject.images.length > 1
 ){
 
 document
@@ -945,7 +945,6 @@ document
 ${currentImage + 1} of ${currentProject.images.length}
 </span>
 
-
 <button onclick="prevImage()">
 previous
 </button>
@@ -955,10 +954,7 @@ previous
 <button onclick="nextImage()">
 next
 </button>
-
-` : ""}
-
-`
+`;
 
 }
 
@@ -966,7 +962,7 @@ else{
 
 document
 .getElementById("controls")
-.innerHTML = ""
+.innerHTML = "";
 
 }
 
