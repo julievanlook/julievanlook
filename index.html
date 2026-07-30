@@ -181,10 +181,14 @@ font-style:italic;
  .control-divider{
     display:inline-block;
     width:1px;
-    height:12px;
+    height:8px;
     background:black;
     margin:0 8px;
     vertical-align:middle;
+}
+ .control-space{
+    display:inline-block;
+    width:20px;
 }
 
 button{
@@ -951,7 +955,7 @@ ${currentProject.images.length}
 previous
 </button>
 
-<span class="control-divider"></span>
+<span class="control-space"></span>
 
 <button onclick="nextImage()">
 next
