@@ -22,9 +22,9 @@
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body {
@@ -34,7 +34,7 @@ body {
 
     padding: 33px 50px;
 
-   font-size: 11px;
+    font-size: 11px;
     line-height: 1.35;
     font-weight: 400;
 
@@ -47,6 +47,11 @@ body {
     text-align: left;
     text-rendering: optimizeLegibility;
 }
+
+
+/* =========================
+   LAYOUT
+   ========================= */
 
 .container{
     display:flex;
@@ -77,73 +82,79 @@ body {
 }
 
 
+/* =========================
+   TEMPORARY DEVELOPMENT MODE
+   ========================= */
+
+/*
+   The information, navigation and menu
+   are temporarily hidden while the website
+   is under development.
+*/
+
+.info,
+.menu{
+    display:none !important;
+}
 
 
+/* =========================
+   MENU
+   ========================= */
 
 .info{
-
-margin-bottom:35px;
-
+    margin-bottom:35px;
 }
 
 .menu{
-
-display:flex;
-flex-direction:column;
-gap:6.5px;
-
+    display:flex;
+    flex-direction:column;
+    gap:6.5px;
 }
 
 .menu a{
+    text-decoration:none;
+    color:black;
 
-text-decoration:none;
-color:black;
+    cursor:pointer;
 
-cursor:pointer;
-
-display:block;
-width:fit-content;
-
+    display:block;
+    width:fit-content;
 }
 
 .menu a:hover{
-
-opacity:.45;
-
+    opacity:.45;
 }
 
 .dropdown{
+    display:none;
 
-display:none;
-
-margin-bottom:4px;
-padding-left:10px;
-
+    margin-bottom:4px;
+    padding-left:10px;
 }
 
 .dropdown.active{
-
-display:block;
-
+    display:block;
 }
 
 .item{
+    cursor:pointer;
 
-cursor:pointer;
-
-margin-bottom:1px;
-width:fit-content;
-
-
+    margin-bottom:1px;
+    width:fit-content;
 }
 
 .item:hover{
-
-opacity:.45;
-font-style:italic;
-
+    opacity:.45;
+    font-style:italic;
 }
- .project-content{
+
+
+/* =========================
+   CONTENT
+   ========================= */
+
+.project-content{
     max-width:900px;
 }
 
@@ -151,8 +162,8 @@ font-style:italic;
     flex:1;
     width:100%;
     max-width:none;
-    margin-top:0px;
-    padding-right:0px;
+    margin-top:0;
+    padding-right:0;
 }
 
 .image{
@@ -170,65 +181,79 @@ font-style:italic;
     display:block;
 }
 
+
+/* =========================
+   CONTROLS
+   ========================= */
+
 .controls{
     margin-top:8px;
     margin-bottom:12px;
+
     font-size:11px;
-     display:flex;
+
+    display:flex;
     align-items:center;
+
     letter-spacing:1px;
 }
- .image-count{
+
+.image-count{
     margin-right:8px;
 }
- .control-divider{
+
+.control-divider{
     display:inline-block;
+
     width:1px;
     height:7px;
+
     background:black;
+
     vertical-align:middle;
-   margin:0 4px;
+
+    margin:0 4px;
 }
 
-
 button{
-
-   background:none;
+    background:none;
     border:none;
+
     cursor:pointer;
+
     font-size:11px;
     font-family:inherit;
-    padding:0;
-    letter-spacing:1px;
 
+    padding:0;
+
+    letter-spacing:1px;
 }
 
 button:hover{
-
-opacity:.45;
-
+    opacity:.45;
 }
 
-.description{
-    line-height:1.4;
-}
 
- .image{
-    max-width:900px;
-}
+/* =========================
+   DESCRIPTION
+   ========================= */
 
 .description{
     max-width:none;
     width:100%;
+
     line-height:1.4;
 }
 
 .title{
     font-weight:510;
+
     text-transform:uppercase;
+
     margin-bottom:3px;
 }
- .subtitle{
+
+.subtitle{
     margin-bottom:18px;
     line-height:1.35;
 }
@@ -236,13 +261,22 @@ opacity:.45;
 .description p{
     margin:0 0 14px 0;
 }
- .description .credits{
+
+.description .credits{
     margin-top:22px;
     line-height:1.35;
 }
- .about{
+
+
+/* =========================
+   ABOUT
+   ========================= */
+
+.about{
     max-width:760px;
+
     line-height:1.45;
+
     margin-top:-20px;
 }
 
@@ -262,14 +296,23 @@ opacity:.45;
 .separator{
     margin:22px 0;
 }
- 
+
+
+/* =========================
+   ARCHIVE
+   ========================= */
+
 .archive-grid{
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     column-gap:80px;
     row-gap:60px;
+
     width:100%;
     max-width:none;
+
     margin-top:-20px;
 }
 
@@ -280,11 +323,16 @@ opacity:.45;
 .archive-item:hover{
     opacity:.60;
 }
- .archive-hover-image{
+
+.archive-hover-image{
     width:100%;
+
     aspect-ratio:1 / 1;
+
     object-fit:cover;
+
     display:none;
+
     margin-bottom:10px;
 }
 
@@ -294,28 +342,39 @@ opacity:.45;
 
 .archive-number{
     font-size:14px;
+
     line-height:1.1;
+
     letter-spacing:2px;
+
     font-weight:500;
+
     margin-bottom:10px;
 }
 
 .archive-title{
     margin-bottom:10px;
+
     text-transform:uppercase;
+
     letter-spacing:1px;
 }
 
 .archive-table{
     width:100%;
+
     border-top:1px solid #fff;
 }
 
 .archive-row{
     display:grid;
+
     grid-template-columns:130px 1fr;
+
     border-bottom:1px solid #fff;
+
     padding:4px 0;
+
     align-items:start;
 }
 
@@ -326,10 +385,17 @@ opacity:.45;
 .archive-value{
     white-space:pre-line;
 }
- .contact{
+
+
+/* =========================
+   CONTACT
+   ========================= */
+
+.contact{
     margin-top:-20px;
 }
- .contact a{
+
+.contact a{
     color:black;
     text-decoration:underline;
 }
@@ -337,23 +403,42 @@ opacity:.45;
 .contact a:hover{
     color:gray;
 }
- @media(max-width:1100px){
 
-.archive-grid{
-grid-template-columns:repeat(2,1fr);
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media(max-width:1100px){
+
+    .archive-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
 }
 
-}
-@media (max-width:700px){
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:700px){
+
+    body{
+        padding:25px 20px;
+    }
 
     .archive-grid{
         grid-template-columns:1fr;
+
         gap:35px;
+
         margin-top:25px;
     }
 
     .archive-number{
         font-size:14px;
+
         letter-spacing:2px;
     }
 
@@ -362,6 +447,12 @@ grid-template-columns:repeat(2,1fr);
     }
 
 }
+
+
+/* =========================
+   SMALL SCREENS
+   ========================= */
+
 @media(max-width:900px){
 
     .container{
@@ -370,23 +461,17 @@ grid-template-columns:repeat(2,1fr);
 
     .header{
         flex-direction:column;
+
         gap:15px;
     }
 
     .name{
         width:100%;
- 
     }
 
     .intro{
         max-width:100%;
     }
-
-.info,
-.menu {
-    display: none;
-}
-
 
 }
 
